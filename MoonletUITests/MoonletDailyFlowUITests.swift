@@ -4,17 +4,19 @@ final class MoonletDailyFlowUITests: XCTestCase {
     @MainActor
     func testLaunchesIntoDailySceneAndRevealsCalendar() {
         let app = XCUIApplication()
+        app.launchArguments = ["-uiTesting-short-fragment"]
         app.launch()
 
-        XCTAssertTrue(app.staticTexts["Tonight"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["Daily Scene"].waitForExistence(timeout: 5))
 
-        let window = app.windows.firstMatch
-        XCTAssertTrue(window.waitForExistence(timeout: 2))
-
-        window.tap()
-        window.tap()
-        window.tap()
+        app.swipeDown()
 
         XCTAssertTrue(app.staticTexts["Moon Calendar"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.buttons["Close Calendar"].waitForExistence(timeout: 2))
+
+        app.buttons["Close Calendar"].tap()
+
+        XCTAssertFalse(app.staticTexts["Moon Calendar"].waitForExistence(timeout: 1))
+        XCTAssertTrue(app.staticTexts["Daily Scene"].waitForExistence(timeout: 2))
     }
 }
