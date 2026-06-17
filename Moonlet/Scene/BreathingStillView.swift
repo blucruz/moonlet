@@ -1,12 +1,16 @@
 import SwiftUI
 
 struct BreathingStillView: View {
+    let title: String
     let cycleDay: Int
     let phase: LunarPhase
+    let hook: FragmentHook
     let caption: String?
 
     var body: some View {
-        VStack(spacing: 18) {
+        VStack(alignment: .leading, spacing: 24) {
+            Spacer()
+
             Circle()
                 .fill(.white.opacity(0.9))
                 .frame(width: 112, height: 112)
@@ -16,23 +20,33 @@ struct BreathingStillView: View {
                         .scaleEffect(1.08)
                 }
 
-            Text("Day \(cycleDay)")
-                .font(.title2.weight(.semibold))
-                .foregroundStyle(.white)
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Night \(cycleDay)")
+                    .font(.headline.weight(.semibold))
+                    .foregroundStyle(.white.opacity(0.92))
 
-            Text(phase.rawValue.replacingOccurrences(of: "_", with: " ").capitalized)
-                .font(.subheadline)
-                .foregroundStyle(.white.opacity(0.7))
+                Text(title)
+                    .font(.title2.weight(.semibold))
+                    .foregroundStyle(.white)
 
-            if let caption, caption.isEmpty == false {
-                Text(caption)
-                    .font(.body)
-                    .foregroundStyle(.white.opacity(0.82))
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 24)
+                Text("\(phase.displayName) • \(hook.displayName)")
+                    .font(.subheadline.weight(.medium))
+                    .foregroundStyle(.white.opacity(0.7))
+
+                if let caption, caption.isEmpty == false {
+                    Text(caption)
+                        .font(.body)
+                        .foregroundStyle(.white.opacity(0.82))
+                        .fixedSize(horizontal: false, vertical: true)
+                }
             }
+            .accessibilityElement(children: .ignore)
+            .accessibilityIdentifier("resting-night-metadata")
+            .accessibilityLabel(metadataAccessibilityLabel)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding(.horizontal, 24)
+        .padding(.vertical, 32)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
         .background(
             RadialGradient(
                 colors: [Color.white.opacity(0.14), Color.black],
@@ -42,5 +56,60 @@ struct BreathingStillView: View {
             )
         )
         .ignoresSafeArea()
+    }
+
+    private var metadataAccessibilityLabel: String {
+        var parts = [
+            "Night \(cycleDay)",
+            title,
+            phase.displayName,
+            hook.displayName,
+        ]
+
+        if let caption, caption.isEmpty == false {
+            parts.append(caption)
+        }
+
+        return parts.joined(separator: ", ")
+    }
+}
+
+private extension LunarPhase {
+    var displayName: String {
+        switch self {
+        case .newMoon:
+            "New Moon"
+        case .waxingCrescent:
+            "Waxing Crescent"
+        case .firstQuarter:
+            "First Quarter"
+        case .waxingGibbous:
+            "Waxing Gibbous"
+        case .fullMoon:
+            "Full Moon"
+        case .waningGibbous:
+            "Waning Gibbous"
+        case .lastQuarter:
+            "Last Quarter"
+        case .waningCrescent:
+            "Waning Crescent"
+        }
+    }
+}
+
+private extension FragmentHook {
+    var displayName: String {
+        switch self {
+        case .appearance:
+            "Appearance"
+        case .approach:
+            "Approach"
+        case .reveal:
+            "Reveal"
+        case .departure:
+            "Departure"
+        case .echo:
+            "Echo"
+        }
     }
 }

@@ -19,4 +19,16 @@ final class MoonletDailyFlowUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["Moon Calendar"].waitForExistence(timeout: 1))
         XCTAssertTrue(app.staticTexts["Daily Scene"].waitForExistence(timeout: 2))
     }
+
+    @MainActor
+    func testRestStateShowsNightMetadata() {
+        let app = XCUIApplication()
+        app.launchArguments = ["-uiTesting-short-fragment"]
+        app.launch()
+
+        let restingMetadata = app.otherElements["resting-night-metadata"]
+
+        XCTAssertTrue(restingMetadata.waitForExistence(timeout: 5))
+        XCTAssertTrue(restingMetadata.label.contains("Night"))
+    }
 }

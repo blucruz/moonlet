@@ -23,6 +23,8 @@
 		1A2B3C4D5E6F700000000066 /* BreathingStillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000067 /* BreathingStillView.swift */; };
 		1A2B3C4D5E6F700000000068 /* MotionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000069 /* MotionProfile.swift */; };
 		1A2B3C4D5E6F70000000006A /* ParallaxLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70000000006B /* ParallaxLayer.swift */; };
+		1A2B3C4D5E6F700000000084 /* AmbientAudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000085 /* AmbientAudioController.swift */; };
+		1A2B3C4D5E6F700000000086 /* HapticCuePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000087 /* HapticCuePlayer.swift */; };
 		1A2B3C4D5E6F70000000007C /* MoonCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70000000007D /* MoonCalendarView.swift */; };
 		1A2B3C4D5E6F70000000007E /* MoonCalendarDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70000000007F /* MoonCalendarDayCell.swift */; };
 		1A2B3C4D5E6F700000000006 /* ScenePlaybackViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000016 /* ScenePlaybackViewModelTests.swift */; };
@@ -65,6 +67,8 @@
 		1A2B3C4D5E6F700000000067 /* BreathingStillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingStillView.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000069 /* MotionProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionProfile.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F70000000006B /* ParallaxLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxLayer.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F700000000085 /* AmbientAudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbientAudioController.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F700000000087 /* HapticCuePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticCuePlayer.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F70000000007D /* MoonCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonCalendarView.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F70000000007F /* MoonCalendarDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonCalendarDayCell.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000071 /* MoonletDailyFlowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonletDailyFlowUITests.swift; sourceTree = "<group>"; };
@@ -198,9 +202,27 @@
 				1A2B3C4D5E6F700000000063 /* ScenePlaybackViewModel.swift */,
 				1A2B3C4D5E6F700000000065 /* SceneLayerView.swift */,
 				1A2B3C4D5E6F700000000067 /* BreathingStillView.swift */,
+				1A2B3C4D5E6F700000000088 /* Audio */,
+				1A2B3C4D5E6F700000000089 /* Haptics */,
 				1A2B3C4D5E6F70000000006D /* Motion */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		1A2B3C4D5E6F700000000088 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				1A2B3C4D5E6F700000000085 /* AmbientAudioController.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		1A2B3C4D5E6F700000000089 /* Haptics */ = {
+			isa = PBXGroup;
+			children = (
+				1A2B3C4D5E6F700000000087 /* HapticCuePlayer.swift */,
+			);
+			path = Haptics;
 			sourceTree = "<group>";
 		};
 		1A2B3C4D5E6F70000000006D /* Motion */ = {
@@ -353,6 +375,8 @@
 				1A2B3C4D5E6F700000000062 /* ScenePlaybackViewModel.swift in Sources */,
 				1A2B3C4D5E6F700000000064 /* SceneLayerView.swift in Sources */,
 				1A2B3C4D5E6F700000000066 /* BreathingStillView.swift in Sources */,
+				1A2B3C4D5E6F700000000084 /* AmbientAudioController.swift in Sources */,
+				1A2B3C4D5E6F700000000086 /* HapticCuePlayer.swift in Sources */,
 				1A2B3C4D5E6F700000000068 /* MotionProfile.swift in Sources */,
 				1A2B3C4D5E6F70000000006A /* ParallaxLayer.swift in Sources */,
 				1A2B3C4D5E6F70000000007C /* MoonCalendarView.swift in Sources */,
