@@ -113,10 +113,46 @@ final class ScenePlaybackViewModelTests: XCTestCase {
         )
 
         let model = ScenePlaybackViewModel(fragment: try! XCTUnwrap(fragment))
-        await model.start()
+        let playbackTask = Task {
+            await model.start()
+        }
+
+        await Task.yield()
+
+        XCTAssertEqual(model.playbackState, .playing)
 
         try? await Task.sleep(for: .milliseconds(30))
 
+        await playbackTask.value
+
         XCTAssertEqual(model.playbackState, .resting)
+    }
+
+    @MainActor
+    func testPlaybackCancellationDoesNotTransitionIntoRestState() async {
+        let fragment = StoryFragment(
+            id: "night-12",
+            cycleDay: 12,
+            lunarPhase: .waxingGibbous,
+            title: "The Tide Holds",
+            caption: "The water waits below the reeds.",
+            duration: 1,
+            layers: ["sky", "fog", "water"],
+            hook: .appearance
+        )
+
+        let model = ScenePlaybackViewModel(fragment: try! XCTUnwrap(fragment))
+        let playbackTask = Task {
+            await model.start()
+        }
+
+        await Task.yield()
+
+        XCTAssertEqual(model.playbackState, .playing)
+
+        playbackTask.cancel()
+        await playbackTask.value
+
+        XCTAssertEqual(model.playbackState, .idle)
     }
 }

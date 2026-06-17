@@ -1,11 +1,7 @@
 import SwiftUI
 
 struct ScenePlayerView: View {
-    @State private var model: ScenePlaybackViewModel
-
-    init(model: ScenePlaybackViewModel) {
-        _model = State(initialValue: model)
-    }
+    let model: ScenePlaybackViewModel
 
     var body: some View {
         ZStack {

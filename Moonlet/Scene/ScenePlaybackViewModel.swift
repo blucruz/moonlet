@@ -19,7 +19,13 @@ final class ScenePlaybackViewModel {
     @MainActor
     func start() async {
         playbackState = .playing
-        try? await Task.sleep(for: .seconds(fragment.duration))
-        playbackState = .resting
+        do {
+            try await Task.sleep(for: .seconds(fragment.duration))
+            playbackState = .resting
+        } catch is CancellationError {
+            playbackState = .idle
+        } catch {
+            playbackState = .idle
+        }
     }
 }
