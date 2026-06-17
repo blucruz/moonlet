@@ -1,17 +1,20 @@
 import Foundation
 
 struct LunarPhaseCalculator {
+    private let calendar: Calendar
     private let synodicMonth: Double = 29.530588853
-    private let secondsPerDay: Double = 86_400
     private let referenceNewMoon: Date
 
     init(referenceNewMoon: Date = .init(timeIntervalSince1970: 1_717_286_400)) {
+        self.calendar = .current
         self.referenceNewMoon = referenceNewMoon
     }
 
     func contentDay(for date: Date) -> Int {
-        let elapsedDays = date.timeIntervalSince(referenceNewMoon) / secondsPerDay
-        let normalizedDays = elapsedDays
+        let referenceStartOfDay = calendar.startOfDay(for: referenceNewMoon)
+        let currentStartOfDay = calendar.startOfDay(for: date)
+        let dayOffset = calendar.dateComponents([.day], from: referenceStartOfDay, to: currentStartOfDay).day ?? 0
+        let normalizedDays = Double(dayOffset)
             .truncatingRemainder(dividingBy: synodicMonth)
             .addingPositiveCycleOffset(synodicMonth)
 
@@ -19,7 +22,7 @@ struct LunarPhaseCalculator {
     }
 
     func phase(forCycleDay day: Int) -> LunarPhase {
-        switch day {
+        switch min(max(day, 1), 30) {
         case 1...2:
             return .newMoon
         case 3...7:
