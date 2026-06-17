@@ -17,6 +17,12 @@
 		1A2B3C4D5E6F700000000054 /* FragmentManifestLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000055 /* FragmentManifestLoader.swift */; };
 		1A2B3C4D5E6F700000000056 /* FragmentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000057 /* FragmentRepository.swift */; };
 		1A2B3C4D5E6F700000000058 /* cycle-001.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000059 /* cycle-001.json */; };
+		1A2B3C4D5E6F700000000060 /* ScenePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000061 /* ScenePlayerView.swift */; };
+		1A2B3C4D5E6F700000000062 /* ScenePlaybackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000063 /* ScenePlaybackViewModel.swift */; };
+		1A2B3C4D5E6F700000000064 /* SceneLayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000065 /* SceneLayerView.swift */; };
+		1A2B3C4D5E6F700000000066 /* BreathingStillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000067 /* BreathingStillView.swift */; };
+		1A2B3C4D5E6F700000000068 /* MotionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000069 /* MotionProfile.swift */; };
+		1A2B3C4D5E6F70000000006A /* ParallaxLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70000000006B /* ParallaxLayer.swift */; };
 		1A2B3C4D5E6F700000000006 /* ScenePlaybackViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000016 /* ScenePlaybackViewModelTests.swift */; };
 		1A2B3C4D5E6F700000000007 /* LunarPhaseCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70000000001B /* LunarPhaseCalculatorTests.swift */; };
 		1A2B3C4D5E6F700000000050 /* FragmentRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000051 /* FragmentRepositoryTests.swift */; };
@@ -43,6 +49,12 @@
 		1A2B3C4D5E6F700000000055 /* FragmentManifestLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentManifestLoader.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000057 /* FragmentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentRepository.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000059 /* cycle-001.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "cycle-001.json"; sourceTree = "<group>"; };
+		1A2B3C4D5E6F700000000061 /* ScenePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenePlayerView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F700000000063 /* ScenePlaybackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenePlaybackViewModel.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F700000000065 /* SceneLayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneLayerView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F700000000067 /* BreathingStillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingStillView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F700000000069 /* MotionProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionProfile.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F70000000006B /* ParallaxLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxLayer.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000016 /* ScenePlaybackViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenePlaybackViewModelTests.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F70000000001B /* LunarPhaseCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarPhaseCalculatorTests.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000051 /* FragmentRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentRepositoryTests.swift; sourceTree = "<group>"; };
@@ -93,6 +105,7 @@
 				1A2B3C4D5E6F700000000019 /* App */,
 				1A2B3C4D5E6F70000000001A /* Domain */,
 				1A2B3C4D5E6F70000000005A /* Content */,
+				1A2B3C4D5E6F70000000006C /* Scene */,
 				1A2B3C4D5E6F70000000005B /* Resources */,
 			);
 			path = Moonlet;
@@ -135,6 +148,27 @@
 				1A2B3C4D5E6F700000000057 /* FragmentRepository.swift */,
 			);
 			path = Content;
+			sourceTree = "<group>";
+		};
+		1A2B3C4D5E6F70000000006C /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				1A2B3C4D5E6F700000000061 /* ScenePlayerView.swift */,
+				1A2B3C4D5E6F700000000063 /* ScenePlaybackViewModel.swift */,
+				1A2B3C4D5E6F700000000065 /* SceneLayerView.swift */,
+				1A2B3C4D5E6F700000000067 /* BreathingStillView.swift */,
+				1A2B3C4D5E6F70000000006D /* Motion */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		1A2B3C4D5E6F70000000006D /* Motion */ = {
+			isa = PBXGroup;
+			children = (
+				1A2B3C4D5E6F700000000069 /* MotionProfile.swift */,
+				1A2B3C4D5E6F70000000006B /* ParallaxLayer.swift */,
+			);
+			path = Motion;
 			sourceTree = "<group>";
 		};
 		1A2B3C4D5E6F70000000005B /* Resources */ = {
@@ -252,6 +286,12 @@
 				1A2B3C4D5E6F700000000052 /* FragmentHook.swift in Sources */,
 				1A2B3C4D5E6F700000000054 /* FragmentManifestLoader.swift in Sources */,
 				1A2B3C4D5E6F700000000056 /* FragmentRepository.swift in Sources */,
+				1A2B3C4D5E6F700000000060 /* ScenePlayerView.swift in Sources */,
+				1A2B3C4D5E6F700000000062 /* ScenePlaybackViewModel.swift in Sources */,
+				1A2B3C4D5E6F700000000064 /* SceneLayerView.swift in Sources */,
+				1A2B3C4D5E6F700000000066 /* BreathingStillView.swift in Sources */,
+				1A2B3C4D5E6F700000000068 /* MotionProfile.swift in Sources */,
+				1A2B3C4D5E6F70000000006A /* ParallaxLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

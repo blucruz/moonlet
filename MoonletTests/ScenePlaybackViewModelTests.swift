@@ -98,4 +98,25 @@ final class ScenePlaybackViewModelTests: XCTestCase {
             XCTAssertTrue(context.debugDescription.contains("StoryFragment"))
         }
     }
+
+    @MainActor
+    func testPlaybackTransitionsIntoRestStateAfterDuration() async {
+        let fragment = StoryFragment(
+            id: "night-11",
+            cycleDay: 11,
+            lunarPhase: .waxingGibbous,
+            title: "The Light Offshore",
+            caption: "A pale signal appears beyond the flats.",
+            duration: 0.01,
+            layers: ["sky", "fog", "light"],
+            hook: .appearance
+        )
+
+        let model = ScenePlaybackViewModel(fragment: try! XCTUnwrap(fragment))
+        await model.start()
+
+        try? await Task.sleep(for: .milliseconds(30))
+
+        XCTAssertEqual(model.playbackState, .resting)
+    }
 }
