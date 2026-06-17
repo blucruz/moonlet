@@ -9,6 +9,16 @@ struct StoryFragment: Identifiable, Codable, Equatable {
     let duration: TimeInterval
     let layers: [String]
 
+    private enum CodingKeys: String, CodingKey {
+        case id
+        case cycleDay
+        case lunarPhase
+        case title
+        case caption
+        case duration
+        case layers
+    }
+
     init?(
         id: String,
         cycleDay: Int,
@@ -29,5 +39,29 @@ struct StoryFragment: Identifiable, Codable, Equatable {
         self.caption = caption
         self.duration = duration
         self.layers = layers
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let candidate = StoryFragment(
+            id: try container.decode(String.self, forKey: .id),
+            cycleDay: try container.decode(Int.self, forKey: .cycleDay),
+            lunarPhase: try container.decode(LunarPhase.self, forKey: .lunarPhase),
+            title: try container.decode(String.self, forKey: .title),
+            caption: try container.decodeIfPresent(String.self, forKey: .caption),
+            duration: try container.decode(TimeInterval.self, forKey: .duration),
+            layers: try container.decode([String].self, forKey: .layers)
+        )
+
+        guard let candidate else {
+            throw DecodingError.dataCorrupted(
+                .init(
+                    codingPath: container.codingPath,
+                    debugDescription: "Invalid StoryFragment values."
+                )
+            )
+        }
+
+        self = candidate
     }
 }
