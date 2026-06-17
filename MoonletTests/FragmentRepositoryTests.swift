@@ -23,4 +23,78 @@ final class FragmentRepositoryTests: XCTestCase {
         XCTAssertEqual(fragment.lunarPhase, .fullMoon)
         XCTAssertEqual(fragment.hook, .reveal)
     }
+
+    func testRejectsManifestWithDuplicateCycleDay() {
+        let repository = FragmentRepository(loader: .mock(fragments: self.makeFragments { fragments in
+            fragments[29] = makeFragment(day: 29, id: "night-30")
+        }))
+
+        XCTAssertThrowsError(try repository.allFragments()) { error in
+            XCTAssertEqual(error as? FragmentRepositoryError, .duplicateCycleDay(29))
+        }
+    }
+
+    func testRejectsManifestWithDuplicateIdentifier() {
+        let repository = FragmentRepository(loader: .mock(fragments: self.makeFragments { fragments in
+            fragments[29] = makeFragment(day: 30, id: "night-29")
+        }))
+
+        XCTAssertThrowsError(try repository.allFragments()) { error in
+            XCTAssertEqual(error as? FragmentRepositoryError, .duplicateID("night-29"))
+        }
+    }
+
+    func testRejectsManifestMissingCycleCoverage() {
+        let repository = FragmentRepository(loader: .mock(fragments: self.makeFragments { fragments in
+            fragments.removeLast()
+        }))
+
+        XCTAssertThrowsError(try repository.allFragments()) { error in
+            XCTAssertEqual(error as? FragmentRepositoryError, .invalidFragmentCount(29))
+        }
+    }
+
+    func testReturnsTypedErrorForMissingRequestedDay() {
+        let repository = FragmentRepository(loader: .mock())
+
+        XCTAssertThrowsError(try repository.fragment(forCycleDay: 31)) { error in
+            XCTAssertEqual(error as? FragmentRepositoryError, .fragmentNotFound(31))
+        }
+    }
+
+    private func makeFragments(_ update: (inout [StoryFragment]) -> Void = { _ in }) -> [StoryFragment] {
+        var fragments = (1...30).map { makeFragment(day: $0, id: "night-\($0)") }
+        update(&fragments)
+        return fragments
+    }
+
+    private func makeFragment(day: Int, id: String) -> StoryFragment {
+        StoryFragment(
+            id: id,
+            cycleDay: day,
+            lunarPhase: LunarPhaseCalculator().phase(forCycleDay: day),
+            title: "Night \(day)",
+            caption: nil,
+            duration: 24,
+            layers: ["sky"],
+            hook: day == 15 ? .reveal : .appearance
+        )!
+    }
+}
+
+private extension FragmentManifestLoader {
+    static func mock(fragments: @autoclosure @escaping () -> [StoryFragment] = (1...30).map { day in
+        StoryFragment(
+            id: "night-\(day)",
+            cycleDay: day,
+            lunarPhase: LunarPhaseCalculator().phase(forCycleDay: day),
+            title: "Night \(day)",
+            caption: nil,
+            duration: 24,
+            layers: ["sky"],
+            hook: day == 15 ? .reveal : .appearance
+        )!
+    }) -> FragmentManifestLoader {
+        FragmentManifestLoader { fragments() }
+    }
 }
