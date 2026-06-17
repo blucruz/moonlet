@@ -12,7 +12,9 @@
 		1A2B3C4D5E6F700000000003 /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000013 /* AppRoute.swift */; };
 		1A2B3C4D5E6F700000000004 /* LunarPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000014 /* LunarPhase.swift */; };
 		1A2B3C4D5E6F700000000005 /* StoryFragment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000015 /* StoryFragment.swift */; };
+		1A2B3C4D5E6F700000000008 /* LunarPhaseCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70000000001C /* LunarPhaseCalculator.swift */; };
 		1A2B3C4D5E6F700000000006 /* ScenePlaybackViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000016 /* ScenePlaybackViewModelTests.swift */; };
+		1A2B3C4D5E6F700000000007 /* LunarPhaseCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70000000001B /* LunarPhaseCalculatorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +33,9 @@
 		1A2B3C4D5E6F700000000013 /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000014 /* LunarPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarPhase.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000015 /* StoryFragment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryFragment.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F70000000001C /* LunarPhaseCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarPhaseCalculator.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000016 /* ScenePlaybackViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenePlaybackViewModelTests.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F70000000001B /* LunarPhaseCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarPhaseCalculatorTests.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000017 /* MoonletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoonletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2B3C4D5E6F700000000018 /* Moonlet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moonlet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -86,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				1A2B3C4D5E6F700000000016 /* ScenePlaybackViewModelTests.swift */,
+				1A2B3C4D5E6F70000000001B /* LunarPhaseCalculatorTests.swift */,
 			);
 			path = MoonletTests;
 			sourceTree = "<group>";
@@ -104,6 +109,7 @@
 			children = (
 				1A2B3C4D5E6F700000000014 /* LunarPhase.swift */,
 				1A2B3C4D5E6F700000000015 /* StoryFragment.swift */,
+				1A2B3C4D5E6F70000000001C /* LunarPhaseCalculator.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -191,6 +197,7 @@
 				1A2B3C4D5E6F700000000003 /* AppRoute.swift in Sources */,
 				1A2B3C4D5E6F700000000004 /* LunarPhase.swift in Sources */,
 				1A2B3C4D5E6F700000000005 /* StoryFragment.swift in Sources */,
+				1A2B3C4D5E6F700000000008 /* LunarPhaseCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A2B3C4D5E6F700000000006 /* ScenePlaybackViewModelTests.swift in Sources */,
+				1A2B3C4D5E6F700000000007 /* LunarPhaseCalculatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
