@@ -1,0 +1,302 @@
+[
+  {
+    "id": "night-1",
+    "cycleDay": 1,
+    "lunarPhase": "new_moon",
+    "title": "The Tide Holds Its Breath",
+    "caption": "Only the water seems to know where she went.",
+    "duration": 24,
+    "layers": ["moon-glow", "mist-bank", "shoreline", "figure"],
+    "hook": "appearance"
+  },
+  {
+    "id": "night-2",
+    "cycleDay": 2,
+    "lunarPhase": "new_moon",
+    "title": "Footprints Fill With Dark Water",
+    "caption": "The flats remember a crossing before dawn.",
+    "duration": 24,
+    "layers": ["shoreline", "ripple", "footprints", "mist-bank"],
+    "hook": "approach"
+  },
+  {
+    "id": "night-3",
+    "cycleDay": 3,
+    "lunarPhase": "waxing_crescent",
+    "title": "A Lantern Under the Fog",
+    "caption": "A small light moves where the causeway should be.",
+    "duration": 25,
+    "layers": ["fog", "lantern", "shoreline", "water"],
+    "hook": "appearance"
+  },
+  {
+    "id": "night-4",
+    "cycleDay": 4,
+    "lunarPhase": "waxing_crescent",
+    "title": "Reeds Lean Toward Her Name",
+    "caption": "The marsh answers before the narrator can speak.",
+    "duration": 25,
+    "layers": ["reeds", "mist-bank", "water", "figure"],
+    "hook": "approach"
+  },
+  {
+    "id": "night-5",
+    "cycleDay": 5,
+    "lunarPhase": "waxing_crescent",
+    "title": "Salt Wind Through the Pilings",
+    "caption": "Something knocks below the dock in patient rhythm.",
+    "duration": 26,
+    "layers": ["dock", "pilings", "water", "moon-glow"],
+    "hook": "appearance"
+  },
+  {
+    "id": "night-6",
+    "cycleDay": 6,
+    "lunarPhase": "waxing_crescent",
+    "title": "A Path of Silver Nails",
+    "caption": "The moon drives a bright trail straight across the inlet.",
+    "duration": 26,
+    "layers": ["moon-path", "water", "shoreline", "mist-bank"],
+    "hook": "approach"
+  },
+  {
+    "id": "night-7",
+    "cycleDay": 7,
+    "lunarPhase": "waxing_crescent",
+    "title": "Her Shadow Arrives First",
+    "caption": "A long silhouette reaches the shore without a body.",
+    "duration": 26,
+    "layers": ["shadow", "shoreline", "mist-bank", "figure"],
+    "hook": "appearance"
+  },
+  {
+    "id": "night-8",
+    "cycleDay": 8,
+    "lunarPhase": "first_quarter",
+    "title": "Half a Moon, Half a Promise",
+    "caption": "The sky withholds as much as it gives.",
+    "duration": 27,
+    "layers": ["half-moon", "cloud-band", "shoreline", "water"],
+    "hook": "approach"
+  },
+  {
+    "id": "night-9",
+    "cycleDay": 9,
+    "lunarPhase": "first_quarter",
+    "title": "Knuckles on the Windowless Wall",
+    "caption": "A sound of entering comes from a place with no house.",
+    "duration": 27,
+    "layers": ["wall-outline", "mist-bank", "figure", "water"],
+    "hook": "appearance"
+  },
+  {
+    "id": "night-10",
+    "cycleDay": 10,
+    "lunarPhase": "first_quarter",
+    "title": "The Channel Turns White",
+    "caption": "Foam gathers into a line pointing inland.",
+    "duration": 27,
+    "layers": ["channel", "foam", "shoreline", "moon-glow"],
+    "hook": "approach"
+  },
+  {
+    "id": "night-11",
+    "cycleDay": 11,
+    "lunarPhase": "waxing_gibbous",
+    "title": "The Light Offshore",
+    "caption": "A pale signal appears beyond the flats.",
+    "duration": 28,
+    "layers": ["sky", "fog", "figure"],
+    "hook": "appearance"
+  },
+  {
+    "id": "night-12",
+    "cycleDay": 12,
+    "lunarPhase": "waxing_gibbous",
+    "title": "A Bell With No Tower",
+    "caption": "The note hangs over the water and refuses to fade.",
+    "duration": 28,
+    "layers": ["water", "mist-bank", "distant-bell", "moon-glow"],
+    "hook": "approach"
+  },
+  {
+    "id": "night-13",
+    "cycleDay": 13,
+    "lunarPhase": "waxing_gibbous",
+    "title": "Boards Rise From the Tide",
+    "caption": "A walkway assembles itself plank by plank.",
+    "duration": 29,
+    "layers": ["boards", "water", "shoreline", "figure"],
+    "hook": "approach"
+  },
+  {
+    "id": "night-14",
+    "cycleDay": 14,
+    "lunarPhase": "waxing_gibbous",
+    "title": "The Frame Learns the Moon",
+    "caption": "White wood catches enough light to resemble a doorway.",
+    "duration": 30,
+    "layers": ["doorframe", "moon-glow", "mist-bank", "water"],
+    "hook": "appearance"
+  },
+  {
+    "id": "night-15",
+    "cycleDay": 15,
+    "lunarPhase": "full_moon",
+    "title": "The Door Across the Flats",
+    "caption": "At last the white frame stands where no house could be.",
+    "duration": 32,
+    "layers": ["moon-disk", "water-reflection", "distant-door", "figure"],
+    "hook": "reveal"
+  },
+  {
+    "id": "night-16",
+    "cycleDay": 16,
+    "lunarPhase": "full_moon",
+    "title": "She Steps Through the Bright",
+    "caption": "For one breath the threshold holds both sea and room.",
+    "duration": 31,
+    "layers": ["moon-disk", "doorframe", "figure", "water-reflection"],
+    "hook": "departure"
+  },
+  {
+    "id": "night-17",
+    "cycleDay": 17,
+    "lunarPhase": "waning_gibbous",
+    "title": "The Room Tastes of Brine",
+    "caption": "What opened inland now exhales a harbor wind.",
+    "duration": 30,
+    "layers": ["doorframe", "interior-glow", "mist-bank", "shoreline"],
+    "hook": "departure"
+  },
+  {
+    "id": "night-18",
+    "cycleDay": 18,
+    "lunarPhase": "waning_gibbous",
+    "title": "Netting in the Branches",
+    "caption": "Something from the bay hangs in the cypress by morning tide.",
+    "duration": 29,
+    "layers": ["branches", "netting", "wind", "moon-glow"],
+    "hook": "echo"
+  },
+  {
+    "id": "night-19",
+    "cycleDay": 19,
+    "lunarPhase": "waning_gibbous",
+    "title": "Her Voice From the Kitchen Tile",
+    "caption": "The house answers in wet echoes to a voice long gone.",
+    "duration": 29,
+    "layers": ["tile", "reflection", "shadow", "interior-glow"],
+    "hook": "echo"
+  },
+  {
+    "id": "night-20",
+    "cycleDay": 20,
+    "lunarPhase": "waning_gibbous",
+    "title": "A Glass Left on the Sill",
+    "caption": "Condensation gathers as if a guest has just departed.",
+    "duration": 28,
+    "layers": ["window", "glass", "moon-glow", "mist-bank"],
+    "hook": "departure"
+  },
+  {
+    "id": "night-21",
+    "cycleDay": 21,
+    "lunarPhase": "waning_gibbous",
+    "title": "Pale Water in the Hall",
+    "caption": "The moon lays a tide line where floorboards should be dry.",
+    "duration": 28,
+    "layers": ["hallway", "waterline", "shadow", "moon-glow"],
+    "hook": "echo"
+  },
+  {
+    "id": "night-22",
+    "cycleDay": 22,
+    "lunarPhase": "last_quarter",
+    "title": "The Threshold Empties",
+    "caption": "The doorway thins until it is more weather than wood.",
+    "duration": 27,
+    "layers": ["doorframe", "mist-bank", "shoreline", "wind"],
+    "hook": "departure"
+  },
+  {
+    "id": "night-23",
+    "cycleDay": 23,
+    "lunarPhase": "last_quarter",
+    "title": "Mud Keeps the Outline",
+    "caption": "A rectangular mark remains after the water pulls away.",
+    "duration": 27,
+    "layers": ["mudflat", "outline", "water", "moon-glow"],
+    "hook": "echo"
+  },
+  {
+    "id": "night-24",
+    "cycleDay": 24,
+    "lunarPhase": "last_quarter",
+    "title": "Crickets After the Bell",
+    "caption": "Ordinary night sounds return one by one.",
+    "duration": 26,
+    "layers": ["grass", "dark-water", "shoreline", "stars"],
+    "hook": "echo"
+  },
+  {
+    "id": "night-25",
+    "cycleDay": 25,
+    "lunarPhase": "waning_crescent",
+    "title": "The Dock Forgets Her Weight",
+    "caption": "Boards rise a little now that no one waits there.",
+    "duration": 26,
+    "layers": ["dock", "water", "mist-bank", "stars"],
+    "hook": "departure"
+  },
+  {
+    "id": "night-26",
+    "cycleDay": 26,
+    "lunarPhase": "waning_crescent",
+    "title": "Only the Oars Move",
+    "caption": "An untied boat turns slowly in a circle of light.",
+    "duration": 25,
+    "layers": ["boat", "oars", "water-reflection", "moon-glow"],
+    "hook": "echo"
+  },
+  {
+    "id": "night-27",
+    "cycleDay": 27,
+    "lunarPhase": "waning_crescent",
+    "title": "Mist Over the Causeway",
+    "caption": "The route across the flats closes behind itself.",
+    "duration": 25,
+    "layers": ["causeway", "mist-bank", "water", "dark-sky"],
+    "hook": "departure"
+  },
+  {
+    "id": "night-28",
+    "cycleDay": 28,
+    "lunarPhase": "waning_crescent",
+    "title": "The Window Faces East Again",
+    "caption": "What was haunted becomes merely empty.",
+    "duration": 24,
+    "layers": ["window", "pale-dawn", "shadow", "wall"],
+    "hook": "echo"
+  },
+  {
+    "id": "night-29",
+    "cycleDay": 29,
+    "lunarPhase": "waning_crescent",
+    "title": "Low Tide Takes the Frame",
+    "caption": "By moonset the doorway is only a pale shape in the reeds.",
+    "duration": 24,
+    "layers": ["reeds", "doorframe", "mudflat", "mist-bank"],
+    "hook": "departure"
+  },
+  {
+    "id": "night-30",
+    "cycleDay": 30,
+    "lunarPhase": "waning_crescent",
+    "title": "The Shore Keeps the Last Light",
+    "caption": "By morning only the tide and the open frame remain.",
+    "duration": 26,
+    "layers": ["shoreline", "mist-bank", "empty-door", "water-reflection"],
+    "hook": "echo"
+  }
+]

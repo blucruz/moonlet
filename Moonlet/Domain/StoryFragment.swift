@@ -8,6 +8,7 @@ struct StoryFragment: Identifiable, Codable, Equatable {
     let caption: String?
     let duration: TimeInterval
     let layers: [String]
+    let hook: FragmentHook
 
     private enum CodingKeys: String, CodingKey {
         case id
@@ -17,6 +18,7 @@ struct StoryFragment: Identifiable, Codable, Equatable {
         case caption
         case duration
         case layers
+        case hook
     }
 
     init?(
@@ -26,7 +28,8 @@ struct StoryFragment: Identifiable, Codable, Equatable {
         title: String,
         caption: String?,
         duration: TimeInterval,
-        layers: [String]
+        layers: [String],
+        hook: FragmentHook = .appearance
     ) {
         guard (1...30).contains(cycleDay), duration > 0 else {
             return nil
@@ -39,6 +42,7 @@ struct StoryFragment: Identifiable, Codable, Equatable {
         self.caption = caption
         self.duration = duration
         self.layers = layers
+        self.hook = hook
     }
 
     init(from decoder: Decoder) throws {
@@ -50,7 +54,8 @@ struct StoryFragment: Identifiable, Codable, Equatable {
             title: try container.decode(String.self, forKey: .title),
             caption: try container.decodeIfPresent(String.self, forKey: .caption),
             duration: try container.decode(TimeInterval.self, forKey: .duration),
-            layers: try container.decode([String].self, forKey: .layers)
+            layers: try container.decode([String].self, forKey: .layers),
+            hook: try container.decodeIfPresent(FragmentHook.self, forKey: .hook) ?? .appearance
         )
 
         guard let candidate else {

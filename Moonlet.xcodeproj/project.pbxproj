@@ -13,8 +13,13 @@
 		1A2B3C4D5E6F700000000004 /* LunarPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000014 /* LunarPhase.swift */; };
 		1A2B3C4D5E6F700000000005 /* StoryFragment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000015 /* StoryFragment.swift */; };
 		1A2B3C4D5E6F700000000008 /* LunarPhaseCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70000000001C /* LunarPhaseCalculator.swift */; };
+		1A2B3C4D5E6F700000000052 /* FragmentHook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000053 /* FragmentHook.swift */; };
+		1A2B3C4D5E6F700000000054 /* FragmentManifestLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000055 /* FragmentManifestLoader.swift */; };
+		1A2B3C4D5E6F700000000056 /* FragmentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000057 /* FragmentRepository.swift */; };
+		1A2B3C4D5E6F700000000058 /* cycle-001.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000059 /* cycle-001.json */; };
 		1A2B3C4D5E6F700000000006 /* ScenePlaybackViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000016 /* ScenePlaybackViewModelTests.swift */; };
 		1A2B3C4D5E6F700000000007 /* LunarPhaseCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70000000001B /* LunarPhaseCalculatorTests.swift */; };
+		1A2B3C4D5E6F700000000050 /* FragmentRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000051 /* FragmentRepositoryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,8 +39,13 @@
 		1A2B3C4D5E6F700000000014 /* LunarPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarPhase.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000015 /* StoryFragment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryFragment.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F70000000001C /* LunarPhaseCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarPhaseCalculator.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F700000000053 /* FragmentHook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentHook.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F700000000055 /* FragmentManifestLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentManifestLoader.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F700000000057 /* FragmentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentRepository.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F700000000059 /* cycle-001.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "cycle-001.json"; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000016 /* ScenePlaybackViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenePlaybackViewModelTests.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F70000000001B /* LunarPhaseCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarPhaseCalculatorTests.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F700000000051 /* FragmentRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentRepositoryTests.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000017 /* MoonletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoonletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2B3C4D5E6F700000000018 /* Moonlet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moonlet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -82,6 +92,8 @@
 				1A2B3C4D5E6F700000000011 /* MoonletApp.swift */,
 				1A2B3C4D5E6F700000000019 /* App */,
 				1A2B3C4D5E6F70000000001A /* Domain */,
+				1A2B3C4D5E6F70000000005A /* Content */,
+				1A2B3C4D5E6F70000000005B /* Resources */,
 			);
 			path = Moonlet;
 			sourceTree = "<group>";
@@ -91,6 +103,7 @@
 			children = (
 				1A2B3C4D5E6F700000000016 /* ScenePlaybackViewModelTests.swift */,
 				1A2B3C4D5E6F70000000001B /* LunarPhaseCalculatorTests.swift */,
+				1A2B3C4D5E6F700000000051 /* FragmentRepositoryTests.swift */,
 			);
 			path = MoonletTests;
 			sourceTree = "<group>";
@@ -110,8 +123,34 @@
 				1A2B3C4D5E6F700000000014 /* LunarPhase.swift */,
 				1A2B3C4D5E6F700000000015 /* StoryFragment.swift */,
 				1A2B3C4D5E6F70000000001C /* LunarPhaseCalculator.swift */,
+				1A2B3C4D5E6F700000000053 /* FragmentHook.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		1A2B3C4D5E6F70000000005A /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				1A2B3C4D5E6F700000000055 /* FragmentManifestLoader.swift */,
+				1A2B3C4D5E6F700000000057 /* FragmentRepository.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		1A2B3C4D5E6F70000000005B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1A2B3C4D5E6F70000000005C /* Fragments */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1A2B3C4D5E6F70000000005C /* Fragments */ = {
+			isa = PBXGroup;
+			children = (
+				1A2B3C4D5E6F700000000059 /* cycle-001.json */,
+			);
+			path = Fragments;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +162,7 @@
 			buildPhases = (
 				1A2B3C4D5E6F70000000000B /* Frameworks */,
 				1A2B3C4D5E6F700000000025 /* Sources */,
+				1A2B3C4D5E6F70000000005D /* Resources */,
 			);
 			buildRules = (
 			);
@@ -187,6 +227,17 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		1A2B3C4D5E6F70000000005D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A2B3C4D5E6F700000000058 /* cycle-001.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1A2B3C4D5E6F700000000025 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -198,6 +249,9 @@
 				1A2B3C4D5E6F700000000004 /* LunarPhase.swift in Sources */,
 				1A2B3C4D5E6F700000000005 /* StoryFragment.swift in Sources */,
 				1A2B3C4D5E6F700000000008 /* LunarPhaseCalculator.swift in Sources */,
+				1A2B3C4D5E6F700000000052 /* FragmentHook.swift in Sources */,
+				1A2B3C4D5E6F700000000054 /* FragmentManifestLoader.swift in Sources */,
+				1A2B3C4D5E6F700000000056 /* FragmentRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +261,7 @@
 			files = (
 				1A2B3C4D5E6F700000000006 /* ScenePlaybackViewModelTests.swift in Sources */,
 				1A2B3C4D5E6F700000000007 /* LunarPhaseCalculatorTests.swift in Sources */,
+				1A2B3C4D5E6F700000000050 /* FragmentRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
