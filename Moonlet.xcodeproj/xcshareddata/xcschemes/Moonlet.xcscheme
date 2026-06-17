@@ -8,6 +8,20 @@
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting="YES"
+            buildForRunning="NO"
+            buildForProfiling="NO"
+            buildForArchiving="NO"
+            buildForAnalyzing="NO">
+            <BuildableReference
+               BuildableIdentifier="primary"
+               BlueprintIdentifier="1A2B3C4D5E6F700000000076"
+               BuildableName="MoonletUITests.xctest"
+               BlueprintName="MoonletUITests"
+               ReferencedContainer="container:Moonlet.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting="YES"
             buildForRunning="YES"
             buildForProfiling="YES"
             buildForArchiving="YES"
@@ -38,7 +52,26 @@
                ReferencedContainer="container:Moonlet.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped="NO">
+            <BuildableReference
+               BuildableIdentifier="primary"
+               BlueprintIdentifier="1A2B3C4D5E6F700000000076"
+               BuildableName="MoonletUITests.xctest"
+               BlueprintName="MoonletUITests"
+               ReferencedContainer="container:Moonlet.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier="primary"
+            BlueprintIdentifier="1A2B3C4D5E6F70000000000A"
+            BuildableName="Moonlet.app"
+            BlueprintName="Moonlet"
+            ReferencedContainer="container:Moonlet.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       buildConfiguration="Debug"

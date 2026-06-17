@@ -23,13 +23,23 @@
 		1A2B3C4D5E6F700000000066 /* BreathingStillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000067 /* BreathingStillView.swift */; };
 		1A2B3C4D5E6F700000000068 /* MotionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000069 /* MotionProfile.swift */; };
 		1A2B3C4D5E6F70000000006A /* ParallaxLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70000000006B /* ParallaxLayer.swift */; };
+		1A2B3C4D5E6F70000000007C /* MoonCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70000000007D /* MoonCalendarView.swift */; };
+		1A2B3C4D5E6F70000000007E /* MoonCalendarDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70000000007F /* MoonCalendarDayCell.swift */; };
 		1A2B3C4D5E6F700000000006 /* ScenePlaybackViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000016 /* ScenePlaybackViewModelTests.swift */; };
 		1A2B3C4D5E6F700000000007 /* LunarPhaseCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70000000001B /* LunarPhaseCalculatorTests.swift */; };
 		1A2B3C4D5E6F700000000050 /* FragmentRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000051 /* FragmentRepositoryTests.swift */; };
+		1A2B3C4D5E6F700000000070 /* MoonletDailyFlowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000071 /* MoonletDailyFlowUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		1A2B3C4D5E6F700000000030 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A2B3C4D5E6F700000000020 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A2B3C4D5E6F70000000000A;
+			remoteInfo = Moonlet;
+		};
+		1A2B3C4D5E6F700000000072 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1A2B3C4D5E6F700000000020 /* Project object */;
 			proxyType = 1;
@@ -55,11 +65,15 @@
 		1A2B3C4D5E6F700000000067 /* BreathingStillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingStillView.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000069 /* MotionProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionProfile.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F70000000006B /* ParallaxLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxLayer.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F70000000007D /* MoonCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonCalendarView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F70000000007F /* MoonCalendarDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonCalendarDayCell.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F700000000071 /* MoonletDailyFlowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonletDailyFlowUITests.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000016 /* ScenePlaybackViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenePlaybackViewModelTests.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F70000000001B /* LunarPhaseCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarPhaseCalculatorTests.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000051 /* FragmentRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentRepositoryTests.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000017 /* MoonletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoonletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2B3C4D5E6F700000000018 /* Moonlet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moonlet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A2B3C4D5E6F700000000073 /* MoonletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoonletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +91,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1A2B3C4D5E6F700000000074 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -85,6 +106,7 @@
 			children = (
 				1A2B3C4D5E6F70000000000E /* Moonlet */,
 				1A2B3C4D5E6F70000000000F /* MoonletTests */,
+				1A2B3C4D5E6F700000000075 /* MoonletUITests */,
 				1A2B3C4D5E6F700000000024 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,6 +116,7 @@
 			children = (
 				1A2B3C4D5E6F700000000018 /* Moonlet.app */,
 				1A2B3C4D5E6F700000000017 /* MoonletTests.xctest */,
+				1A2B3C4D5E6F700000000073 /* MoonletUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,6 +126,7 @@
 			children = (
 				1A2B3C4D5E6F700000000011 /* MoonletApp.swift */,
 				1A2B3C4D5E6F700000000019 /* App */,
+				1A2B3C4D5E6F700000000080 /* Calendar */,
 				1A2B3C4D5E6F70000000001A /* Domain */,
 				1A2B3C4D5E6F70000000005A /* Content */,
 				1A2B3C4D5E6F70000000006C /* Scene */,
@@ -121,6 +145,14 @@
 			path = MoonletTests;
 			sourceTree = "<group>";
 		};
+		1A2B3C4D5E6F700000000075 /* MoonletUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1A2B3C4D5E6F700000000071 /* MoonletDailyFlowUITests.swift */,
+			);
+			path = MoonletUITests;
+			sourceTree = "<group>";
+		};
 		1A2B3C4D5E6F700000000019 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +160,15 @@
 				1A2B3C4D5E6F700000000013 /* AppRoute.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		1A2B3C4D5E6F700000000080 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				1A2B3C4D5E6F70000000007D /* MoonCalendarView.swift */,
+				1A2B3C4D5E6F70000000007F /* MoonCalendarDayCell.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		1A2B3C4D5E6F70000000001A /* Domain */ = {
@@ -224,6 +265,23 @@
 			productReference = 1A2B3C4D5E6F700000000017 /* MoonletTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		1A2B3C4D5E6F700000000076 /* MoonletUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A2B3C4D5E6F70000000007B /* Build configuration list for PBXNativeTarget "MoonletUITests" */;
+			buildPhases = (
+				1A2B3C4D5E6F700000000074 /* Frameworks */,
+				1A2B3C4D5E6F700000000077 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A2B3C4D5E6F700000000078 /* PBXTargetDependency */,
+			);
+			name = MoonletUITests;
+			productName = MoonletUITests;
+			productReference = 1A2B3C4D5E6F700000000073 /* MoonletUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -237,6 +295,10 @@
 						CreatedOnToolsVersion = 16.0;
 					};
 					1A2B3C4D5E6F70000000000E0 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 1A2B3C4D5E6F70000000000A;
+					};
+					1A2B3C4D5E6F700000000076 = {
 						CreatedOnToolsVersion = 16.0;
 						TestTargetID = 1A2B3C4D5E6F70000000000A;
 					};
@@ -257,6 +319,7 @@
 			targets = (
 				1A2B3C4D5E6F70000000000A /* Moonlet */,
 				1A2B3C4D5E6F70000000000E0 /* MoonletTests */,
+				1A2B3C4D5E6F700000000076 /* MoonletUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -292,6 +355,8 @@
 				1A2B3C4D5E6F700000000066 /* BreathingStillView.swift in Sources */,
 				1A2B3C4D5E6F700000000068 /* MotionProfile.swift in Sources */,
 				1A2B3C4D5E6F70000000006A /* ParallaxLayer.swift in Sources */,
+				1A2B3C4D5E6F70000000007C /* MoonCalendarView.swift in Sources */,
+				1A2B3C4D5E6F70000000007E /* MoonCalendarDayCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +370,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1A2B3C4D5E6F700000000077 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A2B3C4D5E6F700000000070 /* MoonletDailyFlowUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -312,6 +385,11 @@
 			isa = PBXTargetDependency;
 			target = 1A2B3C4D5E6F70000000000A /* Moonlet */;
 			targetProxy = 1A2B3C4D5E6F700000000030 /* PBXContainerItemProxy */;
+		};
+		1A2B3C4D5E6F700000000078 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A2B3C4D5E6F70000000000A /* Moonlet */;
+			targetProxy = 1A2B3C4D5E6F700000000072 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -416,6 +494,52 @@
 			};
 			name = Release;
 		};
+		1A2B3C4D5E6F700000000079 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.uriah.moonletUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Moonlet;
+			};
+			name = Debug;
+		};
+		1A2B3C4D5E6F70000000007A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.uriah.moonletUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Moonlet;
+			};
+			name = Release;
+		};
 		1A2B3C4D5E6F700000000044 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -457,6 +581,15 @@
 			buildConfigurations = (
 				1A2B3C4D5E6F700000000042 /* Debug */,
 				1A2B3C4D5E6F700000000043 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A2B3C4D5E6F70000000007B /* Build configuration list for PBXNativeTarget "MoonletUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A2B3C4D5E6F700000000079 /* Debug */,
+				1A2B3C4D5E6F70000000007A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
