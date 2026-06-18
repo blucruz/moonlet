@@ -14,6 +14,8 @@
 		1A2B3C4D5E6F700000000005 /* StoryFragment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000015 /* StoryFragment.swift */; };
 		1A2B3C4D5E6F700000000008 /* LunarPhaseCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70000000001C /* LunarPhaseCalculator.swift */; };
 		B10000000000000000000001 /* MoonPhaseSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000002 /* MoonPhaseSnapshot.swift */; };
+		B10000000000000000000007 /* MoonPhaseDateRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000008 /* MoonPhaseDateRange.swift */; };
+		B10000000000000000000009 /* MoonPhaseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000000000000000000000A /* MoonPhaseStore.swift */; };
 		1A2B3C4D5E6F700000000052 /* FragmentHook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000053 /* FragmentHook.swift */; };
 		1A2B3C4D5E6F700000000054 /* FragmentManifestLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000055 /* FragmentManifestLoader.swift */; };
 		1A2B3C4D5E6F700000000056 /* FragmentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000057 /* FragmentRepository.swift */; };
@@ -32,6 +34,8 @@
 		1A2B3C4D5E6F700000000006 /* ScenePlaybackViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000016 /* ScenePlaybackViewModelTests.swift */; };
 		1A2B3C4D5E6F700000000007 /* LunarPhaseCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70000000001B /* LunarPhaseCalculatorTests.swift */; };
 		1A2B3C4D5E6F700000000050 /* FragmentRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000051 /* FragmentRepositoryTests.swift */; };
+		B10000000000000000000003 /* MoonPhaseDateRangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000004 /* MoonPhaseDateRangeTests.swift */; };
+		B10000000000000000000005 /* MoonPhaseStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000006 /* MoonPhaseStoreTests.swift */; };
 		1A2B3C4D5E6F700000000070 /* MoonletDailyFlowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000071 /* MoonletDailyFlowUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +64,8 @@
 		1A2B3C4D5E6F700000000015 /* StoryFragment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryFragment.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F70000000001C /* LunarPhaseCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarPhaseCalculator.swift; sourceTree = "<group>"; };
 		B10000000000000000000002 /* MoonPhaseSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhaseSnapshot.swift; sourceTree = "<group>"; };
+		B10000000000000000000008 /* MoonPhaseDateRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhaseDateRange.swift; sourceTree = "<group>"; };
+		B1000000000000000000000A /* MoonPhaseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhaseStore.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000053 /* FragmentHook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentHook.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000055 /* FragmentManifestLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentManifestLoader.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000057 /* FragmentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentRepository.swift; sourceTree = "<group>"; };
@@ -79,6 +85,8 @@
 		1A2B3C4D5E6F700000000016 /* ScenePlaybackViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenePlaybackViewModelTests.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F70000000001B /* LunarPhaseCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarPhaseCalculatorTests.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000051 /* FragmentRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentRepositoryTests.swift; sourceTree = "<group>"; };
+		B10000000000000000000004 /* MoonPhaseDateRangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhaseDateRangeTests.swift; sourceTree = "<group>"; };
+		B10000000000000000000006 /* MoonPhaseStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhaseStoreTests.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000017 /* MoonletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoonletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2B3C4D5E6F700000000018 /* Moonlet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moonlet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2B3C4D5E6F700000000073 /* MoonletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoonletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +157,8 @@
 				1A2B3C4D5E6F700000000016 /* ScenePlaybackViewModelTests.swift */,
 				1A2B3C4D5E6F70000000001B /* LunarPhaseCalculatorTests.swift */,
 				1A2B3C4D5E6F700000000051 /* FragmentRepositoryTests.swift */,
+				B10000000000000000000004 /* MoonPhaseDateRangeTests.swift */,
+				B10000000000000000000006 /* MoonPhaseStoreTests.swift */,
 			);
 			path = MoonletTests;
 			sourceTree = "<group>";
@@ -166,6 +176,7 @@
 			children = (
 				1A2B3C4D5E6F700000000012 /* AppModel.swift */,
 				1A2B3C4D5E6F700000000013 /* AppRoute.swift */,
+				B1000000000000000000000A /* MoonPhaseStore.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -186,6 +197,7 @@
 				1A2B3C4D5E6F700000000015 /* StoryFragment.swift */,
 				1A2B3C4D5E6F70000000001C /* LunarPhaseCalculator.swift */,
 				B10000000000000000000002 /* MoonPhaseSnapshot.swift */,
+				B10000000000000000000008 /* MoonPhaseDateRange.swift */,
 				1A2B3C4D5E6F700000000053 /* FragmentHook.swift */,
 			);
 			path = Domain;
@@ -384,6 +396,8 @@
 				1A2B3C4D5E6F700000000005 /* StoryFragment.swift in Sources */,
 				1A2B3C4D5E6F700000000008 /* LunarPhaseCalculator.swift in Sources */,
 				B10000000000000000000001 /* MoonPhaseSnapshot.swift in Sources */,
+				B10000000000000000000007 /* MoonPhaseDateRange.swift in Sources */,
+				B10000000000000000000009 /* MoonPhaseStore.swift in Sources */,
 				1A2B3C4D5E6F700000000052 /* FragmentHook.swift in Sources */,
 				1A2B3C4D5E6F700000000054 /* FragmentManifestLoader.swift in Sources */,
 				1A2B3C4D5E6F700000000056 /* FragmentRepository.swift in Sources */,
@@ -407,6 +421,8 @@
 				1A2B3C4D5E6F700000000006 /* ScenePlaybackViewModelTests.swift in Sources */,
 				1A2B3C4D5E6F700000000007 /* LunarPhaseCalculatorTests.swift in Sources */,
 				1A2B3C4D5E6F700000000050 /* FragmentRepositoryTests.swift in Sources */,
+				B10000000000000000000003 /* MoonPhaseDateRangeTests.swift in Sources */,
+				B10000000000000000000005 /* MoonPhaseStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
