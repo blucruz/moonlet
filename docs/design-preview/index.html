@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moonlet Design Preview</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #06080d;
+      --panel: rgba(255, 255, 255, 0.05);
+      --panel-border: rgba(255, 255, 255, 0.12);
+      --text: #f5f7fb;
+      --muted: rgba(232, 236, 244, 0.72);
+      --soft: rgba(196, 204, 219, 0.56);
+      --accent: #d6e4ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(74, 104, 172, 0.18), transparent 34%),
+        linear-gradient(180deg, #0b111d 0%, var(--bg) 36%, #020304 100%);
+      color: var(--text);
+    }
+
+    .page {
+      width: min(1400px, calc(100vw - 48px));
+      margin: 0 auto;
+      padding: 56px 0 80px;
+    }
+
+    .hero {
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--soft);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(32px, 4vw, 54px);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+      font-weight: 600;
+    }
+
+    .subtitle {
+      margin: 14px 0 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.55;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 22px 0 34px;
+    }
+
+    .chip {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: rgba(241, 244, 249, 0.78);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+    }
+
+    .card-body {
+      padding: 18px 20px 22px;
+    }
+
+    .card-body h2 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      letter-spacing: -0.03em;
+    }
+
+    .card-body p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .scene {
+      aspect-ratio: 9 / 16;
+      position: relative;
+      overflow: hidden;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: linear-gradient(180deg, #09111d 0%, #05070d 32%, #020203 100%);
+    }
+
+    .scene::before {
+      content: "";
+      position: absolute;
+      inset: -18% -10% auto -10%;
+      height: 58%;
+      background: radial-gradient(circle at 50% 35%, rgba(150, 180, 255, 0.24), rgba(150, 180, 255, 0.06) 30%, rgba(0, 0, 0, 0) 66%);
+      pointer-events: none;
+    }
+
+    .stars {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 18% 22%, rgba(255,255,255,0.82) 0 1px, transparent 1.6px),
+        radial-gradient(circle at 78% 18%, rgba(255,255,255,0.58) 0 1px, transparent 1.8px),
+        radial-gradient(circle at 68% 28%, rgba(196,214,255,0.44) 0 1px, transparent 2px),
+        radial-gradient(circle at 29% 36%, rgba(255,255,255,0.5) 0 1px, transparent 2px),
+        radial-gradient(circle at 82% 34%, rgba(160,190,255,0.36) 0 1px, transparent 2px);
+      opacity: 0.7;
+    }
+
+    .mist {
+      position: absolute;
+      left: -8%;
+      right: -8%;
+      border-radius: 999px;
+      filter: blur(18px);
+    }
+
+    .mist.one {
+      height: 90px;
+      bottom: 28%;
+      background: linear-gradient(90deg, rgba(70,90,110,0), rgba(110,130,150,0.26), rgba(70,90,110,0));
+      opacity: 0.45;
+    }
+
+    .mist.two {
+      height: 120px;
+      bottom: 12%;
+      background: linear-gradient(90deg, rgba(70,90,110,0.02), rgba(180,190,210,0.12), rgba(70,90,110,0.02));
+      opacity: 0.28;
+    }
+
+    .moon-wrap {
+      position: relative;
+      width: 100%;
+      height: 56%;
+    }
+
+    .moon {
+      position: absolute;
+      border-radius: 999px;
+      background: radial-gradient(circle at 34% 30%, rgba(255,255,255,0.98), rgba(244,247,255,0.92) 42%, rgba(210,221,255,0.78) 72%, rgba(190,205,244,0.55) 100%);
+      box-shadow:
+        0 0 30px rgba(214,225,255,0.22),
+        0 0 90px rgba(214,225,255,0.18),
+        0 0 180px rgba(140,170,255,0.08);
+    }
+
+    .moon::after {
+      content: "";
+      position: absolute;
+      inset: 12%;
+      border-radius: 999px;
+      background: radial-gradient(circle at 45% 40%, rgba(255,255,255,0.16), rgba(255,255,255,0) 64%);
+      mix-blend-mode: screen;
+    }
+
+    .crescent-shadow {
+      position: absolute;
+      inset: 0;
+      border-radius: 999px;
+      background: radial-gradient(circle at 78% 50%, rgba(5,7,13,0.94) 0%, rgba(5,7,13,0.94) 46%, rgba(5,7,13,0.08) 61%, rgba(5,7,13,0) 72%);
+    }
+
+    .ring {
+      position: absolute;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .copy {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .scene-label {
+      width: fit-content;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: rgba(245,247,252,0.82);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .scene-eyebrow {
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(237,241,255,0.64);
+    }
+
+    .scene-title {
+      font-size: 34px;
+      line-height: 1.02;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      color: #f6f7fb;
+      max-width: 85%;
+    }
+
+    .scene-caption {
+      font-size: 18px;
+      line-height: 1.4;
+      color: rgba(229,233,242,0.82);
+      max-width: 88%;
+    }
+
+    .scene-meta {
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(190,197,213,0.55);
+    }
+
+    .variant-a .ring {
+      width: 220px;
+      height: 220px;
+      top: 7%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .variant-a .moon {
+      width: 148px;
+      height: 148px;
+      top: 16%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .variant-a .crescent-shadow {
+      transform: translateX(18%);
+    }
+
+    .variant-b {
+      background: linear-gradient(180deg, #08111f 0%, #04060b 34%, #010102 100%);
+    }
+
+    .variant-b .ring {
+      width: 264px;
+      height: 264px;
+      top: 2%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-color: rgba(180,205,255,0.08);
+    }
+
+    .variant-b .moon {
+      width: 174px;
+      height: 174px;
+      top: 12%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .variant-b .crescent-shadow {
+      transform: translateX(14%);
+    }
+
+    .variant-b .mist.one {
+      bottom: 24%;
+      height: 110px;
+      opacity: 0.52;
+    }
+
+    .variant-b .mist.two {
+      bottom: 8%;
+      height: 144px;
+      opacity: 0.32;
+    }
+
+    .variant-b .scene-title {
+      font-size: 38px;
+      max-width: 92%;
+    }
+
+    .variant-b .scene-caption {
+      max-width: 76%;
+    }
+
+    .variant-c {
+      background: linear-gradient(180deg, #09111b 0%, #03050a 42%, #010102 100%);
+    }
+
+    .variant-c .stars {
+      opacity: 0.52;
+    }
+
+    .variant-c .ring {
+      width: 210px;
+      height: 210px;
+      top: 11%;
+      right: 1%;
+    }
+
+    .variant-c .moon {
+      width: 132px;
+      height: 132px;
+      top: 18%;
+      right: 10%;
+    }
+
+    .variant-c .crescent-shadow {
+      transform: translateX(16%);
+    }
+
+    .variant-c .mist.one {
+      bottom: 20%;
+      height: 70px;
+      opacity: 0.34;
+    }
+
+    .variant-c .mist.two {
+      bottom: 5%;
+      height: 120px;
+      opacity: 0.18;
+    }
+
+    .variant-c .scene-title {
+      font-size: 30px;
+      max-width: 72%;
+    }
+
+    .variant-c .scene-caption {
+      max-width: 70%;
+    }
+
+    @media (max-width: 1100px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <p class="eyebrow">Moonlet Preview Export</p>
+      <h1>Resting Scene Design Directions</h1>
+      <p class="subtitle">
+        Exported static preview for the redesigned Moonlet home scene. These three directions all follow the same brief:
+        moonlit storytelling, poster-style typography, and a painterly glowing moon.
+      </p>
+      <div class="legend">
+        <div class="chip">Direction: Moonlit Narrative</div>
+        <div class="chip">Typography: Poster Copy</div>
+        <div class="chip">Moon Style: Painterly Glow</div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <div class="scene variant-a">
+          <div class="stars"></div>
+          <div class="moon-wrap">
+            <div class="ring"></div>
+            <div class="moon"><div class="crescent-shadow"></div></div>
+            <div class="mist one"></div>
+            <div class="mist two"></div>
+          </div>
+          <div class="copy">
+            <div class="scene-label">Quietest</div>
+            <div class="scene-eyebrow">Tonight</div>
+            <div class="scene-title">Half a Moon,<br>Half a Promise</div>
+            <div class="scene-caption">Copy leads the scene. The moon acts like a soft light source behind a veil of mist.</div>
+            <div class="scene-meta">Night 8 • First Quarter • Approach</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <h2>A. Quiet Poster</h2>
+          <p>The safest, steadiest direction. Keeps the minimalist baseline, but adds atmosphere through glow, haze, and a more deliberate title rhythm.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="scene variant-b">
+          <div class="stars"></div>
+          <div class="moon-wrap">
+            <div class="ring"></div>
+            <div class="moon"><div class="crescent-shadow"></div></div>
+            <div class="mist one"></div>
+            <div class="mist two"></div>
+          </div>
+          <div class="copy">
+            <div class="scene-label">Recommended</div>
+            <div class="scene-eyebrow">Tonight</div>
+            <div class="scene-title">Half a Moon,<br>Half a Promise</div>
+            <div class="scene-caption">The moon gets larger and the halo becomes the emotional center, while the copy still anchors cleanly.</div>
+            <div class="scene-meta">Night 8 • First Quarter • Approach</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <h2>B. Halo Lead</h2>
+          <p>The best balance. Stronger mood, bigger visual payoff, but still stable enough for daily repeat viewing.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="scene variant-c">
+          <div class="stars"></div>
+          <div class="moon-wrap">
+            <div class="ring"></div>
+            <div class="moon"><div class="crescent-shadow"></div></div>
+            <div class="mist one"></div>
+            <div class="mist two"></div>
+          </div>
+          <div class="copy">
+            <div class="scene-label">Editorial</div>
+            <div class="scene-eyebrow">Tonight</div>
+            <div class="scene-title">Half a Moon,<br>Half a Promise</div>
+            <div class="scene-caption">The moon shifts upward and outward, leaving more negative space and making the scene feel colder and more fashion-led.</div>
+            <div class="scene-meta">Night 8 • First Quarter • Approach</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <h2>C. Sky Negative Space</h2>
+          <p>The most stylized and editorial option. Strong composition, but more emotionally distant than A or B.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
