@@ -13,6 +13,7 @@
 		1A2B3C4D5E6F700000000004 /* LunarPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000014 /* LunarPhase.swift */; };
 		1A2B3C4D5E6F700000000005 /* StoryFragment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000015 /* StoryFragment.swift */; };
 		1A2B3C4D5E6F700000000008 /* LunarPhaseCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70000000001C /* LunarPhaseCalculator.swift */; };
+		B10000000000000000000001 /* MoonPhaseSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000002 /* MoonPhaseSnapshot.swift */; };
 		1A2B3C4D5E6F700000000052 /* FragmentHook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000053 /* FragmentHook.swift */; };
 		1A2B3C4D5E6F700000000054 /* FragmentManifestLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000055 /* FragmentManifestLoader.swift */; };
 		1A2B3C4D5E6F700000000056 /* FragmentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000057 /* FragmentRepository.swift */; };
@@ -58,6 +59,7 @@
 		1A2B3C4D5E6F700000000014 /* LunarPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarPhase.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000015 /* StoryFragment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryFragment.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F70000000001C /* LunarPhaseCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarPhaseCalculator.swift; sourceTree = "<group>"; };
+		B10000000000000000000002 /* MoonPhaseSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhaseSnapshot.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000053 /* FragmentHook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentHook.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000055 /* FragmentManifestLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentManifestLoader.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000057 /* FragmentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentRepository.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				1A2B3C4D5E6F700000000014 /* LunarPhase.swift */,
 				1A2B3C4D5E6F700000000015 /* StoryFragment.swift */,
 				1A2B3C4D5E6F70000000001C /* LunarPhaseCalculator.swift */,
+				B10000000000000000000002 /* MoonPhaseSnapshot.swift */,
 				1A2B3C4D5E6F700000000053 /* FragmentHook.swift */,
 			);
 			path = Domain;
@@ -380,6 +383,7 @@
 				1A2B3C4D5E6F700000000004 /* LunarPhase.swift in Sources */,
 				1A2B3C4D5E6F700000000005 /* StoryFragment.swift in Sources */,
 				1A2B3C4D5E6F700000000008 /* LunarPhaseCalculator.swift in Sources */,
+				B10000000000000000000001 /* MoonPhaseSnapshot.swift in Sources */,
 				1A2B3C4D5E6F700000000052 /* FragmentHook.swift in Sources */,
 				1A2B3C4D5E6F700000000054 /* FragmentManifestLoader.swift in Sources */,
 				1A2B3C4D5E6F700000000056 /* FragmentRepository.swift in Sources */,
