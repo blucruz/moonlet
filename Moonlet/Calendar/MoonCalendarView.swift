@@ -1,51 +1,49 @@
 import SwiftUI
 
 struct MoonCalendarView: View {
-    let fragments: [StoryFragment]
-    let currentCycleDay: Int
-    let onDismiss: () -> Void
-
-    @Environment(\.dismiss) private var dismiss
-
-    private let columns = Array(repeating: GridItem(.flexible(), spacing: 10), count: 5)
+    @Bindable var store: MoonPhaseStore
 
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
-                    Text("Moon Calendar")
-                        .font(.title2.weight(.semibold))
+                VStack(alignment: .leading, spacing: 14) {
+                    Text("月历")
+                        .font(.system(size: 34, weight: .semibold, design: .serif))
                         .foregroundStyle(.white)
 
-                    Text("Thirty nights held in a single quiet grid.")
+                    Text("查看今天前后约一个月的月相")
                         .font(.subheadline)
-                        .foregroundStyle(.white.opacity(0.72))
+                        .foregroundStyle(.white.opacity(0.56))
 
-                    LazyVGrid(columns: columns, spacing: 10) {
-                        ForEach(fragments.sorted(by: { $0.cycleDay < $1.cycleDay })) { fragment in
-                            MoonCalendarDayCell(
-                                day: fragment.cycleDay,
-                                title: fragment.title,
-                                isCurrent: fragment.cycleDay == currentCycleDay,
-                                isUnlocked: fragment.cycleDay <= currentCycleDay
-                            )
-                        }
-                    }
+                    MoonCalendarGridView(store: store)
+                        .padding(.top, 14)
                 }
-                .padding(20)
+                .padding(.horizontal, 18)
+                .padding(.top, 22)
+                .padding(.bottom, 36)
             }
-            .background(.black.opacity(0.96))
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button("Close") {
-                        onDismiss()
-                        dismiss()
-                    }
-                    .accessibilityLabel("Close Calendar")
-                }
+            .background(MoonPhaseBackground())
+            .navigationDestination(
+                isPresented: Binding(
+                    get: { store.selectedDate != nil },
+                    set: { if !$0 { store.clearSelection() } }
+                )
+            ) {
+                selectedDateDetail
             }
         }
-        .ignoresSafeArea()
-        .accessibilityIdentifier("moon-calendar-view")
+    }
+
+    @ViewBuilder
+    private var selectedDateDetail: some View {
+        if let date = store.selectedDate,
+           let snapshot = store.snapshot(for: date) {
+            MoonPhaseDetailView(snapshot: snapshot, isToday: false)
+        } else {
+            ContentUnavailableView(
+                "暂时无法计算月相",
+                systemImage: "moon.stars"
+            )
+        }
     }
 }

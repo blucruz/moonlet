@@ -1,0 +1,48 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "error.calculation" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : { "state" : "translated", "value" : "暂时无法计算月相" }
+        }
+      }
+    },
+    "metric.age" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : { "state" : "translated", "value" : "月龄" }
+        }
+      }
+    },
+    "metric.illumination" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : { "state" : "translated", "value" : "照明比例" }
+        }
+      }
+    },
+    "metric.nextPhase" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : { "state" : "translated", "value" : "下一个关键月相" }
+        }
+      }
+    },
+    "tab.calendar" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : { "state" : "translated", "value" : "月历" }
+        }
+      }
+    },
+    "tab.today" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : { "state" : "translated", "value" : "今天" }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
