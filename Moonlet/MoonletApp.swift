@@ -23,10 +23,12 @@ private struct MoonletAppView: View {
     var body: some View {
         ScenePlayerView(model: appModel.playbackModel)
             .overlay(alignment: .topLeading) {
-                DailySceneOverlay(
-                    routeLabel: appModel.currentRoute.accessibilityLabel,
-                    fragment: appModel.currentFragment
-                )
+                if appModel.playbackModel.playbackState != .resting {
+                    DailySceneOverlay(
+                        routeLabel: appModel.currentRoute.accessibilityLabel,
+                        fragment: appModel.currentFragment
+                    )
+                }
             }
             .contentShape(Rectangle())
             .gesture(

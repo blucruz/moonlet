@@ -7,7 +7,7 @@ final class MoonletDailyFlowUITests: XCTestCase {
         app.launchArguments = ["-uiTesting-short-fragment"]
         app.launch()
 
-        XCTAssertTrue(app.staticTexts["Daily Scene"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.otherElements["daily-scene-root"].waitForExistence(timeout: 5))
 
         app.swipeDown()
 
@@ -17,7 +17,7 @@ final class MoonletDailyFlowUITests: XCTestCase {
         app.buttons["Close Calendar"].tap()
 
         XCTAssertFalse(app.staticTexts["Moon Calendar"].waitForExistence(timeout: 1))
-        XCTAssertTrue(app.staticTexts["Daily Scene"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.otherElements["daily-scene-root"].waitForExistence(timeout: 2))
     }
 
     @MainActor
