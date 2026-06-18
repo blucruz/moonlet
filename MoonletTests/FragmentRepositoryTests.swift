@@ -62,6 +62,28 @@ final class FragmentRepositoryTests: XCTestCase {
         }
     }
 
+    func testRejectsManifestWithPhaseMismatch() {
+        let repository = FragmentRepository(loader: .mock(fragments: self.makeFragments { fragments in
+            fragments[14] = StoryFragment(
+                id: "night-15",
+                cycleDay: 15,
+                lunarPhase: .newMoon,
+                title: "Night 15",
+                caption: nil,
+                duration: 24,
+                layers: ["sky"],
+                hook: .reveal
+            )!
+        }))
+
+        XCTAssertThrowsError(try repository.allFragments()) { error in
+            XCTAssertEqual(
+                error as? FragmentRepositoryError,
+                .invalidPhase(day: 15, expected: .fullMoon, actual: .newMoon)
+            )
+        }
+    }
+
     private func makeFragments(_ update: (inout [StoryFragment]) -> Void = { _ in }) -> [StoryFragment] {
         var fragments = (1...30).map { makeFragment(day: $0, id: "night-\($0)") }
         update(&fragments)

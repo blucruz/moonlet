@@ -5,11 +5,13 @@ enum FragmentRepositoryError: Error, Equatable {
     case duplicateCycleDay(Int)
     case duplicateID(String)
     case missingCycleDay(Int)
+    case invalidPhase(day: Int, expected: LunarPhase, actual: LunarPhase)
     case fragmentNotFound(Int)
 }
 
 struct FragmentRepository {
     let loader: FragmentManifestLoader
+    private let calculator = LunarPhaseCalculator()
 
     func allFragments() throws -> [StoryFragment] {
         let fragments = try loader.load().sorted { $0.cycleDay < $1.cycleDay }
@@ -40,6 +42,15 @@ struct FragmentRepository {
 
             if !seenIDs.insert(fragment.id).inserted {
                 throw FragmentRepositoryError.duplicateID(fragment.id)
+            }
+
+            let expectedPhase = calculator.phase(forCycleDay: fragment.cycleDay)
+            if fragment.lunarPhase != expectedPhase {
+                throw FragmentRepositoryError.invalidPhase(
+                    day: fragment.cycleDay,
+                    expected: expectedPhase,
+                    actual: fragment.lunarPhase
+                )
             }
         }
 

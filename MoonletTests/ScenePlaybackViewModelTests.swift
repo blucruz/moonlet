@@ -9,6 +9,32 @@ final class ScenePlaybackViewModelTests: XCTestCase {
         XCTAssertEqual(appModel.currentRoute.accessibilityLabel, "Daily Scene")
     }
 
+    func testAppModelRefreshesCurrentFragmentWhenCycleDayChanges() {
+        let referenceNewMoon = Date(timeIntervalSince1970: 1_717_286_400)
+        let calculator = LunarPhaseCalculator(referenceNewMoon: referenceNewMoon)
+        let repository = FragmentRepository(loader: .bundleManifest())
+        let initialDate = referenceNewMoon
+        let nextDate = referenceNewMoon.addingTimeInterval(86_400)
+
+        let appModel = AppModel.bootstrap(
+            date: initialDate,
+            calculator: calculator,
+            repository: repository
+        )
+
+        XCTAssertEqual(appModel.currentCycleDay, 1)
+
+        appModel.refreshIfNeeded(
+            date: nextDate,
+            calculator: calculator,
+            repository: repository
+        )
+
+        XCTAssertEqual(appModel.currentCycleDay, 2)
+        XCTAssertEqual(appModel.currentFragment.cycleDay, 2)
+        XCTAssertEqual(appModel.playbackModel.fragment.cycleDay, 2)
+    }
+
     func testStoryFragmentStoresMinimumDailyMetadata() throws {
         XCTAssertNil(
             StoryFragment(

@@ -5,11 +5,11 @@ import Observation
 final class AppModel {
     var currentRoute: AppRoute
     var isCalendarPresented: Bool
-    let currentDate: Date
-    let currentCycleDay: Int
-    let currentFragment: StoryFragment
-    let cycleFragments: [StoryFragment]
-    let playbackModel: ScenePlaybackViewModel
+    var currentDate: Date
+    var currentCycleDay: Int
+    var currentFragment: StoryFragment
+    var cycleFragments: [StoryFragment]
+    var playbackModel: ScenePlaybackViewModel
 
     init(
         currentRoute: AppRoute,
@@ -56,6 +56,28 @@ final class AppModel {
 
     func dismissCalendar() {
         isCalendarPresented = false
+    }
+
+    func refreshIfNeeded(
+        date: Date = .now,
+        calculator: LunarPhaseCalculator = LunarPhaseCalculator(),
+        repository: FragmentRepository = FragmentRepository(loader: .bundleManifest())
+    ) {
+        let nextCycleDay = calculator.contentDay(for: date)
+        guard nextCycleDay != currentCycleDay else {
+            currentDate = date
+            return
+        }
+
+        let fragments = (try? repository.allFragments()) ?? Self.fallbackFragments(using: calculator)
+        let baseFragment = fragments.first(where: { $0.cycleDay == nextCycleDay }) ?? fragments[nextCycleDay - 1]
+        let fragment = Self.configuredFragment(baseFragment)
+
+        currentDate = date
+        currentCycleDay = nextCycleDay
+        currentFragment = fragment
+        cycleFragments = fragments
+        playbackModel = ScenePlaybackViewModel(fragment: fragment)
     }
 }
 

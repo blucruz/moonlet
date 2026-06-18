@@ -2,9 +2,17 @@ import AVFoundation
 
 final class AmbientAudioController {
     private var player: AVAudioPlayer?
+    private static let fallbackResourceName = "moonlet-ambient"
 
     func playLoop(for hook: FragmentHook) {
-        guard let url = Bundle.main.url(forResource: hook.ambientLoopName, withExtension: "mp3") else {
+        let preferredURL = Bundle.main.url(forResource: hook.ambientLoopName, withExtension: "wav")
+            ?? Bundle.main.url(forResource: hook.ambientLoopName, withExtension: "mp3")
+        let fallbackURL = Bundle.main.url(
+            forResource: Self.fallbackResourceName,
+            withExtension: "wav"
+        )
+
+        guard let url = preferredURL ?? fallbackURL else {
             stop()
             return
         }

@@ -3,10 +3,16 @@ import SwiftUI
 @main
 struct MoonletApp: App {
     @State private var appModel = AppModel.bootstrap()
+    @Environment(\.scenePhase) private var scenePhase
 
     var body: some Scene {
         WindowGroup {
             MoonletAppView(appModel: appModel)
+                .onChange(of: scenePhase) { _, newPhase in
+                    if newPhase == .active {
+                        appModel.refreshIfNeeded()
+                    }
+                }
         }
     }
 }
