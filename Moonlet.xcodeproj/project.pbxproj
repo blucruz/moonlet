@@ -16,6 +16,12 @@
 		B10000000000000000000001 /* MoonPhaseSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000002 /* MoonPhaseSnapshot.swift */; };
 		B10000000000000000000007 /* MoonPhaseDateRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000008 /* MoonPhaseDateRange.swift */; };
 		B10000000000000000000009 /* MoonPhaseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000000000000000000000A /* MoonPhaseStore.swift */; };
+		B1000000000000000000000B /* MoonPhaseFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000000000000000000000C /* MoonPhaseFormatting.swift */; };
+		B1000000000000000000000D /* MoonPhaseShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000000000000000000000E /* MoonPhaseShape.swift */; };
+		B1000000000000000000000F /* MoonPhaseMetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000010 /* MoonPhaseMetricsView.swift */; };
+		B10000000000000000000011 /* MoonPhaseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000012 /* MoonPhaseDetailView.swift */; };
+		B10000000000000000000013 /* MoonCalendarGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000014 /* MoonCalendarGridView.swift */; };
+		B10000000000000000000015 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000016 /* Localizable.xcstrings */; };
 		1A2B3C4D5E6F700000000052 /* FragmentHook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000053 /* FragmentHook.swift */; };
 		1A2B3C4D5E6F700000000054 /* FragmentManifestLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000055 /* FragmentManifestLoader.swift */; };
 		1A2B3C4D5E6F700000000056 /* FragmentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000057 /* FragmentRepository.swift */; };
@@ -66,6 +72,12 @@
 		B10000000000000000000002 /* MoonPhaseSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhaseSnapshot.swift; sourceTree = "<group>"; };
 		B10000000000000000000008 /* MoonPhaseDateRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhaseDateRange.swift; sourceTree = "<group>"; };
 		B1000000000000000000000A /* MoonPhaseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhaseStore.swift; sourceTree = "<group>"; };
+		B1000000000000000000000C /* MoonPhaseFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhaseFormatting.swift; sourceTree = "<group>"; };
+		B1000000000000000000000E /* MoonPhaseShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhaseShape.swift; sourceTree = "<group>"; };
+		B10000000000000000000010 /* MoonPhaseMetricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhaseMetricsView.swift; sourceTree = "<group>"; };
+		B10000000000000000000012 /* MoonPhaseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhaseDetailView.swift; sourceTree = "<group>"; };
+		B10000000000000000000014 /* MoonCalendarGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonCalendarGridView.swift; sourceTree = "<group>"; };
+		B10000000000000000000016 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000053 /* FragmentHook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentHook.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000055 /* FragmentManifestLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentManifestLoader.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000057 /* FragmentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentRepository.swift; sourceTree = "<group>"; };
@@ -143,6 +155,7 @@
 				1A2B3C4D5E6F700000000011 /* MoonletApp.swift */,
 				1A2B3C4D5E6F700000000019 /* App */,
 				1A2B3C4D5E6F700000000080 /* Calendar */,
+				B10000000000000000000017 /* MoonPhase */,
 				1A2B3C4D5E6F70000000001A /* Domain */,
 				1A2B3C4D5E6F70000000005A /* Content */,
 				1A2B3C4D5E6F70000000006C /* Scene */,
@@ -186,8 +199,20 @@
 			children = (
 				1A2B3C4D5E6F70000000007D /* MoonCalendarView.swift */,
 				1A2B3C4D5E6F70000000007F /* MoonCalendarDayCell.swift */,
+				B10000000000000000000014 /* MoonCalendarGridView.swift */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		B10000000000000000000017 /* MoonPhase */ = {
+			isa = PBXGroup;
+			children = (
+				B1000000000000000000000C /* MoonPhaseFormatting.swift */,
+				B1000000000000000000000E /* MoonPhaseShape.swift */,
+				B10000000000000000000010 /* MoonPhaseMetricsView.swift */,
+				B10000000000000000000012 /* MoonPhaseDetailView.swift */,
+			);
+			path = MoonPhase;
 			sourceTree = "<group>";
 		};
 		1A2B3C4D5E6F70000000001A /* Domain */ = {
@@ -256,6 +281,7 @@
 			children = (
 				1A2B3C4D5E6F70000000008C /* Audio */,
 				1A2B3C4D5E6F70000000005C /* Fragments */,
+				B10000000000000000000016 /* Localizable.xcstrings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -379,6 +405,7 @@
 			files = (
 				1A2B3C4D5E6F700000000058 /* cycle-001.json in Resources */,
 				1A2B3C4D5E6F70000000008A /* moonlet-ambient.wav in Resources */,
+				B10000000000000000000015 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +438,11 @@
 				1A2B3C4D5E6F70000000006A /* ParallaxLayer.swift in Sources */,
 				1A2B3C4D5E6F70000000007C /* MoonCalendarView.swift in Sources */,
 				1A2B3C4D5E6F70000000007E /* MoonCalendarDayCell.swift in Sources */,
+				B1000000000000000000000B /* MoonPhaseFormatting.swift in Sources */,
+				B1000000000000000000000D /* MoonPhaseShape.swift in Sources */,
+				B1000000000000000000000F /* MoonPhaseMetricsView.swift in Sources */,
+				B10000000000000000000011 /* MoonPhaseDetailView.swift in Sources */,
+				B10000000000000000000013 /* MoonCalendarGridView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

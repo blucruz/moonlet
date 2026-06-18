@@ -43,4 +43,14 @@ final class MoonPhaseStoreTests: XCTestCase {
         XCTAssertFalse(store.moveMonth(by: 1))
         XCTAssertTrue(store.moveMonth(by: -1))
     }
+
+    func testChinesePhaseLabelsAndMetricFormatting() {
+        XCTAssertEqual(LunarPhase.waxingCrescent.displayName, "娥眉月")
+        XCTAssertEqual(MoonPhaseFormatting.illumination(0.134), "13%")
+        XCTAssertEqual(MoonPhaseFormatting.age(3.14), "3.1 天")
+        XCTAssertEqual(
+            MoonPhaseFormatting.countdown(4 * 86_400 + 8 * 3_600),
+            "4 天 8 小时"
+        )
+    }
 }

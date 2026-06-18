@@ -2,33 +2,36 @@ import XCTest
 
 final class MoonletDailyFlowUITests: XCTestCase {
     @MainActor
-    func testLaunchesIntoDailySceneAndRevealsCalendar() {
-        let app = XCUIApplication()
-        app.launchArguments = ["-uiTesting-short-fragment"]
+    func testLaunchesIntoTodayMoonPhaseAndSwitchesTabs() {
+        let app = configuredApplication()
         app.launch()
 
-        XCTAssertTrue(app.otherElements["daily-scene-root"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.scrollViews["moon-phase-detail"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.tabBars.buttons["今天"].isSelected)
+        XCTAssertTrue(app.staticTexts["moon-phase-name"].exists)
 
-        app.swipeDown()
+        app.tabBars.buttons["月历"].tap()
 
-        XCTAssertTrue(app.staticTexts["Moon Calendar"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.buttons["Close Calendar"].waitForExistence(timeout: 2))
-
-        app.buttons["Close Calendar"].tap()
-
-        XCTAssertFalse(app.staticTexts["Moon Calendar"].waitForExistence(timeout: 1))
-        XCTAssertTrue(app.otherElements["daily-scene-root"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.otherElements["moon-calendar-grid"].waitForExistence(timeout: 3))
     }
 
     @MainActor
-    func testRestStateShowsNightMetadata() {
-        let app = XCUIApplication()
-        app.launchArguments = ["-uiTesting-short-fragment"]
+    func testCalendarAllowsSelectingAnInRangeDate() {
+        let app = configuredApplication()
         app.launch()
 
-        let restingMetadata = app.otherElements["resting-night-metadata"]
+        app.tabBars.buttons["月历"].tap()
+        XCTAssertTrue(app.otherElements["moon-calendar-grid"].waitForExistence(timeout: 3))
 
-        XCTAssertTrue(restingMetadata.waitForExistence(timeout: 5))
-        XCTAssertTrue(restingMetadata.label.contains("Night"))
+        app.buttons["2026-06-20"].tap()
+
+        XCTAssertTrue(app.scrollViews["moon-phase-detail"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.navigationBars.buttons.firstMatch.exists)
+    }
+
+    private func configuredApplication() -> XCUIApplication {
+        let app = XCUIApplication()
+        app.launchArguments = ["-uiTesting-date", "2026-06-18T12:00:00Z"]
+        return app
     }
 }

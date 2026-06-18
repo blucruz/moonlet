@@ -2,96 +2,60 @@ import SwiftUI
 
 @main
 struct MoonletApp: App {
-    @State private var appModel = AppModel.bootstrap()
+    @State private var store: MoonPhaseStore
     @Environment(\.scenePhase) private var scenePhase
+
+    init() {
+        let now = Self.testingDateFromArguments() ?? .now
+        _store = State(initialValue: MoonPhaseStore(now: now))
+    }
 
     var body: some Scene {
         WindowGroup {
-            MoonletAppView(appModel: appModel)
-                .onChange(of: scenePhase) { _, newPhase in
-                    if newPhase == .active {
-                        appModel.refreshIfNeeded()
-                    }
-                }
+            rootView
         }
     }
-}
 
-private struct MoonletAppView: View {
-    @Bindable var appModel: AppModel
+    private var rootView: some View {
+        @Bindable var store = store
 
-    var body: some View {
-        ScenePlayerView(model: appModel.playbackModel)
-            .overlay(alignment: .topLeading) {
-                if appModel.playbackModel.playbackState != .resting {
-                    DailySceneOverlay(
-                        routeLabel: appModel.currentRoute.accessibilityLabel,
-                        fragment: appModel.currentFragment
+        return TabView(selection: $store.selectedTab) {
+            NavigationStack {
+                if let snapshot = store.todaySnapshot {
+                    MoonPhaseDetailView(snapshot: snapshot, isToday: true)
+                } else {
+                    ContentUnavailableView(
+                        "暂时无法计算月相",
+                        systemImage: "moon.stars"
                     )
                 }
             }
-            .contentShape(Rectangle())
-            .gesture(
-                DragGesture(minimumDistance: 20)
-                    .onEnded { value in
-                        let isDownwardReveal = value.translation.height > 36 &&
-                            abs(value.translation.height) > abs(value.translation.width)
-
-                        if isDownwardReveal {
-                            appModel.revealCalendar()
-                        }
-                    }
-            )
-            .accessibilityElement(children: .contain)
-            .accessibilityLabel(appModel.currentRoute.accessibilityLabel)
-            .accessibilityIdentifier("daily-scene-root")
-            .sheet(
-                isPresented: Binding(
-                    get: { appModel.isCalendarPresented },
-                    set: { isPresented in
-                        if isPresented {
-                            appModel.revealCalendar()
-                        } else {
-                            appModel.dismissCalendar()
-                        }
-                    }
-                )
-            ) {
-                MoonCalendarView(
-                    fragments: appModel.cycleFragments,
-                    currentCycleDay: appModel.currentCycleDay,
-                    onDismiss: appModel.dismissCalendar
-                )
+            .tabItem {
+                Label("今天", systemImage: "moon.fill")
             }
-    }
-}
+            .tag(AppRoute.today)
 
-private struct DailySceneOverlay: View {
-    let routeLabel: String
-    let fragment: StoryFragment
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text(routeLabel)
-                .font(.caption.weight(.semibold))
-                .foregroundStyle(.white.opacity(0.9))
-
-            Text("Tonight")
-                .font(.caption.weight(.medium))
-                .foregroundStyle(.white.opacity(0.72))
-
-            Text(fragment.title)
-                .font(.title2.weight(.semibold))
-                .foregroundStyle(.white)
-
-            if let caption = fragment.caption, caption.isEmpty == false {
-                Text(caption)
-                    .font(.subheadline)
-                    .foregroundStyle(.white.opacity(0.84))
-                    .fixedSize(horizontal: false, vertical: true)
+            MoonCalendarView(store: store)
+                .tabItem {
+                    Label("月历", systemImage: "calendar")
+                }
+                .tag(AppRoute.calendar)
+        }
+        .tint(Color(red: 0.88, green: 0.84, blue: 0.74))
+        .preferredColorScheme(.dark)
+        .onChange(of: scenePhase) { _, phase in
+            if phase == .active {
+                store.refresh(now: Self.testingDateFromArguments() ?? .now)
             }
         }
-        .padding(20)
-        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    private static func testingDateFromArguments() -> Date? {
+        let arguments = ProcessInfo.processInfo.arguments
+        guard let flagIndex = arguments.firstIndex(of: "-uiTesting-date"),
+              arguments.indices.contains(flagIndex + 1) else {
+            return nil
+        }
+        return ISO8601DateFormatter().date(from: arguments[flagIndex + 1])
     }
 }

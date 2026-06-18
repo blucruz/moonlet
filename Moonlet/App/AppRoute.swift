@@ -1,4 +1,4 @@
-enum AppRoute {
+enum AppRoute: Hashable {
     case today
     case calendar
     case dailyScene

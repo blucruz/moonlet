@@ -1,77 +1,40 @@
 import SwiftUI
 
 struct MoonCalendarDayCell: View {
-    let day: Int
-    let title: String
-    let isCurrent: Bool
-    let isUnlocked: Bool
+    let date: Date
+    let snapshot: MoonPhaseSnapshot?
+    let isToday: Bool
+    let isDisplayedMonth: Bool
+    let isEnabled: Bool
+    let calendar: Calendar
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Text("\(day)")
-                .font(.headline.monospacedDigit())
-                .foregroundStyle(primaryColor)
-
-            Spacer(minLength: 0)
-
-            if isUnlocked {
-                Text(title)
-                    .font(.caption2.weight(.medium))
-                    .foregroundStyle(primaryColor.opacity(0.82))
-                    .lineLimit(2)
+        VStack(spacing: 6) {
+            if let snapshot {
+                MoonPhaseShape(cycleProgress: snapshot.cycleProgress)
+                    .frame(width: 27, height: 27)
             } else {
-                Image(systemName: "moonphase.waning.crescent")
-                    .font(.caption)
-                    .foregroundStyle(primaryColor.opacity(0.55))
+                Circle()
+                    .fill(.white.opacity(0.04))
+                    .frame(width: 27, height: 27)
             }
+
+            Text(calendar.component(.day, from: date), format: .number)
+                .font(.caption2.weight(isToday ? .bold : .regular))
+                .foregroundStyle(.white.opacity(isEnabled ? 0.88 : 0.26))
         }
-        .padding(10)
-        .frame(maxWidth: .infinity, minHeight: 76, alignment: .topLeading)
+        .frame(maxWidth: .infinity)
+        .frame(height: 58)
         .background(
-            RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .fill(backgroundColor)
+            RoundedRectangle(cornerRadius: 12)
+                .fill(isToday ? .white.opacity(0.11) : .white.opacity(0.025))
         )
         .overlay {
-            RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .stroke(borderColor, lineWidth: isCurrent ? 1.5 : 1)
+            if isToday {
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(Color(red: 0.89, green: 0.83, blue: 0.69), lineWidth: 1)
+            }
         }
-        .accessibilityElement(children: .ignore)
-        .accessibilityLabel(accessibilityLabel)
-    }
-
-    private var backgroundColor: Color {
-        if isCurrent {
-            return .white.opacity(0.92)
-        }
-
-        return isUnlocked ? .white.opacity(0.12) : .white.opacity(0.05)
-    }
-
-    private var borderColor: Color {
-        if isCurrent {
-            return .white
-        }
-
-        return isUnlocked ? .white.opacity(0.2) : .white.opacity(0.08)
-    }
-
-    private var primaryColor: Color {
-        if isCurrent {
-            return .black
-        }
-
-        return isUnlocked ? .white : .white.opacity(0.42)
-    }
-
-    private var accessibilityLabel: String {
-        if isCurrent {
-            return "Day \(day), current day, \(title)"
-        }
-
-        if isUnlocked {
-            return "Day \(day), unlocked, \(title)"
-        }
-
-        return "Day \(day), locked"
+        .opacity(isDisplayedMonth ? 1 : 0.42)
     }
 }

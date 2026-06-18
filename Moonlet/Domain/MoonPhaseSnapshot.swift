@@ -19,6 +19,15 @@ enum PrincipalMoonPhase: CaseIterable, Equatable, Sendable {
         case .lastQuarter: "phase.lastQuarter"
         }
     }
+
+    var displayName: String {
+        switch self {
+        case .newMoon: "新月"
+        case .firstQuarter: "上弦月"
+        case .fullMoon: "满月"
+        case .lastQuarter: "下弦月"
+        }
+    }
 }
 
 struct MoonPhaseSnapshot: Equatable, Sendable {

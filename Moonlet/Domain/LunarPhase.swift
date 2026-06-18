@@ -36,4 +36,17 @@ enum LunarPhase: String, Codable, Equatable {
     var localizationKey: String {
         "phase.\(rawValue)"
     }
+
+    var displayName: String {
+        switch self {
+        case .newMoon: "新月"
+        case .waxingCrescent: "娥眉月"
+        case .firstQuarter: "上弦月"
+        case .waxingGibbous: "盈凸月"
+        case .fullMoon: "满月"
+        case .waningGibbous: "亏凸月"
+        case .lastQuarter: "下弦月"
+        case .waningCrescent: "残月"
+        }
+    }
 }
