@@ -53,6 +53,7 @@
 		B10000000000000000000005 /* MoonPhaseStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000006 /* MoonPhaseStoreTests.swift */; };
 		D10000000000000000000001 /* MoonLightingModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10000000000000000000002 /* MoonLightingModelTests.swift */; };
 		E10000000000000000000001 /* MoonParallaxModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10000000000000000000002 /* MoonParallaxModelTests.swift */; };
+		E10000000000000000000005 /* MoonSceneGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10000000000000000000006 /* MoonSceneGraphTests.swift */; };
 		1A2B3C4D5E6F700000000070 /* MoonletDailyFlowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000071 /* MoonletDailyFlowUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +122,7 @@
 		B10000000000000000000006 /* MoonPhaseStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhaseStoreTests.swift; sourceTree = "<group>"; };
 		D10000000000000000000002 /* MoonLightingModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonLightingModelTests.swift; sourceTree = "<group>"; };
 		E10000000000000000000002 /* MoonParallaxModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonParallaxModelTests.swift; sourceTree = "<group>"; };
+		E10000000000000000000006 /* MoonSceneGraphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonSceneGraphTests.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000017 /* MoonletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoonletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2B3C4D5E6F700000000018 /* Moonlet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moonlet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2B3C4D5E6F700000000073 /* MoonletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoonletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +198,7 @@
 				B10000000000000000000006 /* MoonPhaseStoreTests.swift */,
 				D10000000000000000000002 /* MoonLightingModelTests.swift */,
 				E10000000000000000000002 /* MoonParallaxModelTests.swift */,
+				E10000000000000000000006 /* MoonSceneGraphTests.swift */,
 			);
 			path = MoonletTests;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				B10000000000000000000005 /* MoonPhaseStoreTests.swift in Sources */,
 				D10000000000000000000001 /* MoonLightingModelTests.swift in Sources */,
 				E10000000000000000000001 /* MoonParallaxModelTests.swift in Sources */,
+				E10000000000000000000005 /* MoonSceneGraphTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

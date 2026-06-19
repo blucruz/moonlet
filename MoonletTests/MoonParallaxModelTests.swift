@@ -38,7 +38,7 @@ final class MoonParallaxModelTests: XCTestCase {
         XCTAssertEqual(output.yaw, 0, accuracy: 0.0001)
     }
 
-    func testRotationIsLimitedToTwoDegrees() {
+    func testRotationIsLimitedToFourDegrees() {
         let output = MoonParallaxModel().rotation(
             neutralPitch: 0,
             neutralRoll: 0,
@@ -48,12 +48,12 @@ final class MoonParallaxModelTests: XCTestCase {
 
         XCTAssertEqual(
             abs(output.pitch),
-            degreesToRadians(2),
+            degreesToRadians(4),
             accuracy: 0.0001
         )
         XCTAssertEqual(
             abs(output.yaw),
-            degreesToRadians(2),
+            degreesToRadians(4),
             accuracy: 0.0001
         )
     }

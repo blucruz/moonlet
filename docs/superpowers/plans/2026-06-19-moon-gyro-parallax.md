@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Add calibrated, reverse-direction gyroscope parallax to the existing 3D moon, limited to two degrees per axis with dead-zone filtering and smooth response.
+**Goal:** Add calibrated, reverse-direction gyroscope parallax to the existing 3D moon and phase lights, limited to four degrees per axis with dead-zone filtering and smooth response.
 
 **Architecture:** Introduce a pure `MoonParallaxModel` that converts neutral and current attitudes into testable target rotations. Keep calibration and smoothing state inside `MoonMotionController`, then send final pitch/yaw offsets to the existing SceneKit coordinator. The SceneKit moon retains its current base orientation, lighting, material, camera, and atmospheric composition.
 
@@ -65,7 +65,7 @@ func testDeadZoneSuppressesSmallTremor() {
     XCTAssertEqual(output.yaw, 0, accuracy: 0.0001)
 }
 
-func testRotationIsLimitedToTwoDegrees() {
+func testRotationIsLimitedToFourDegrees() {
     let output = MoonParallaxModel().rotation(
         neutralPitch: 0,
         neutralRoll: 0,
@@ -211,7 +211,8 @@ Confirm:
 - phone-right produces moon-left;
 - phone-forward produces moon-backward;
 - small tremors are suppressed;
-- both axes remain at or below `2°`;
+- both axes remain at or below `4°`;
+- the phase lights and terminator follow the moon's parallax transform;
 - stopping and reopening recalibrates neutral attitude.
 
 - [ ] **Step 4: Review final diff**

@@ -8,7 +8,7 @@ struct MoonParallaxRotation: Equatable, Sendable {
 }
 
 struct MoonParallaxModel: Sendable {
-    static let maximumRotation = degreesToRadians(2)
+    static let maximumRotation = degreesToRadians(4)
     static let deadZone = degreesToRadians(0.5)
     static let fullInputRange = degreesToRadians(15)
 

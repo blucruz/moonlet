@@ -39,6 +39,7 @@ struct MoonSceneKitMoonView: UIViewRepresentable {
         private static let basePitch: Float = -0.055
 
         let scene = SCNScene()
+        let parallaxNode = SCNNode()
         let moonContainer = SCNNode()
         let moonNode = SCNNode()
         let keyLightNode = SCNNode()
@@ -82,10 +83,11 @@ struct MoonSceneKitMoonView: UIViewRepresentable {
         @MainActor
         private func configureScene() {
             scene.rootNode.addChildNode(cameraNode)
-            scene.rootNode.addChildNode(keyLightNode)
-            scene.rootNode.addChildNode(rimLightNode)
             scene.rootNode.addChildNode(ambientLightNode)
-            scene.rootNode.addChildNode(moonContainer)
+            scene.rootNode.addChildNode(parallaxNode)
+            parallaxNode.addChildNode(keyLightNode)
+            parallaxNode.addChildNode(rimLightNode)
+            parallaxNode.addChildNode(moonContainer)
             scene.background.contents = UIColor.clear
 
             let camera = SCNCamera()
@@ -215,8 +217,8 @@ struct MoonSceneKitMoonView: UIViewRepresentable {
                         return
                     }
 
-                    self.moonContainer.eulerAngles = SCNVector3(
-                        Self.basePitch + Float(rotation.pitch),
+                    self.parallaxNode.eulerAngles = SCNVector3(
+                        Float(rotation.pitch),
                         Float(rotation.yaw),
                         0
                     )
