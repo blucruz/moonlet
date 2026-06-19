@@ -24,6 +24,7 @@
 		C10000000000000000000003 /* MoonMotionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000004 /* MoonMotionController.swift */; };
 		D10000000000000000000003 /* MoonLightingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10000000000000000000004 /* MoonLightingModel.swift */; };
 		D10000000000000000000005 /* MoonDetailAtmosphereView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10000000000000000000006 /* MoonDetailAtmosphereView.swift */; };
+		E10000000000000000000003 /* MoonParallaxModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10000000000000000000004 /* MoonParallaxModel.swift */; };
 		B10000000000000000000013 /* MoonCalendarGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000014 /* MoonCalendarGridView.swift */; };
 		B10000000000000000000015 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000016 /* Localizable.xcstrings */; };
 		C10000000000000000000006 /* Moon_NASA_LRO_Flat_Small.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000005 /* Moon_NASA_LRO_Flat_Small.usdz */; };
@@ -51,6 +52,7 @@
 		B10000000000000000000003 /* MoonPhaseDateRangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000004 /* MoonPhaseDateRangeTests.swift */; };
 		B10000000000000000000005 /* MoonPhaseStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000006 /* MoonPhaseStoreTests.swift */; };
 		D10000000000000000000001 /* MoonLightingModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10000000000000000000002 /* MoonLightingModelTests.swift */; };
+		E10000000000000000000001 /* MoonParallaxModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10000000000000000000002 /* MoonParallaxModelTests.swift */; };
 		1A2B3C4D5E6F700000000070 /* MoonletDailyFlowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000071 /* MoonletDailyFlowUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +91,7 @@
 		C10000000000000000000004 /* MoonMotionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonMotionController.swift; sourceTree = "<group>"; };
 		D10000000000000000000004 /* MoonLightingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonLightingModel.swift; sourceTree = "<group>"; };
 		D10000000000000000000006 /* MoonDetailAtmosphereView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonDetailAtmosphereView.swift; sourceTree = "<group>"; };
+		E10000000000000000000004 /* MoonParallaxModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonParallaxModel.swift; sourceTree = "<group>"; };
 		B10000000000000000000014 /* MoonCalendarGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonCalendarGridView.swift; sourceTree = "<group>"; };
 		B10000000000000000000016 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000053 /* FragmentHook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentHook.swift; sourceTree = "<group>"; };
@@ -117,6 +120,7 @@
 		B10000000000000000000004 /* MoonPhaseDateRangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhaseDateRangeTests.swift; sourceTree = "<group>"; };
 		B10000000000000000000006 /* MoonPhaseStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhaseStoreTests.swift; sourceTree = "<group>"; };
 		D10000000000000000000002 /* MoonLightingModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonLightingModelTests.swift; sourceTree = "<group>"; };
+		E10000000000000000000002 /* MoonParallaxModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonParallaxModelTests.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000017 /* MoonletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoonletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2B3C4D5E6F700000000018 /* Moonlet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moonlet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2B3C4D5E6F700000000073 /* MoonletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoonletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +195,7 @@
 				B10000000000000000000004 /* MoonPhaseDateRangeTests.swift */,
 				B10000000000000000000006 /* MoonPhaseStoreTests.swift */,
 				D10000000000000000000002 /* MoonLightingModelTests.swift */,
+				E10000000000000000000002 /* MoonParallaxModelTests.swift */,
 			);
 			path = MoonletTests;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 				C10000000000000000000004 /* MoonMotionController.swift */,
 				D10000000000000000000004 /* MoonLightingModel.swift */,
 				D10000000000000000000006 /* MoonDetailAtmosphereView.swift */,
+				E10000000000000000000004 /* MoonParallaxModel.swift */,
 			);
 			path = MoonPhase;
 			sourceTree = "<group>";
@@ -493,6 +499,7 @@
 				C10000000000000000000003 /* MoonMotionController.swift in Sources */,
 				D10000000000000000000003 /* MoonLightingModel.swift in Sources */,
 				D10000000000000000000005 /* MoonDetailAtmosphereView.swift in Sources */,
+				E10000000000000000000003 /* MoonParallaxModel.swift in Sources */,
 				B10000000000000000000013 /* MoonCalendarGridView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +514,7 @@
 				B10000000000000000000003 /* MoonPhaseDateRangeTests.swift in Sources */,
 				B10000000000000000000005 /* MoonPhaseStoreTests.swift in Sources */,
 				D10000000000000000000001 /* MoonLightingModelTests.swift in Sources */,
+				E10000000000000000000001 /* MoonParallaxModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

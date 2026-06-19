@@ -36,6 +36,8 @@ struct MoonSceneKitMoonView: UIViewRepresentable {
 
     @MainActor
     final class Coordinator {
+        private static let basePitch: Float = -0.055
+
         let scene = SCNScene()
         let moonContainer = SCNNode()
         let moonNode = SCNNode()
@@ -141,7 +143,7 @@ struct MoonSceneKitMoonView: UIViewRepresentable {
             ambientLightNode.light = ambientLight
 
             moonContainer.position = SCNVector3(0, 0, 0)
-            moonContainer.eulerAngles.x = -0.055
+            moonContainer.eulerAngles.x = Self.basePitch
         }
 
         @MainActor
@@ -207,17 +209,16 @@ struct MoonSceneKitMoonView: UIViewRepresentable {
         }
 
         private func configureMotion() {
-            motionController.onMotionUpdate = { [weak self] pitch, roll, accelerationZ in
+            motionController.onMotionUpdate = { [weak self] rotation in
                 DispatchQueue.main.async {
                     guard let self else {
                         return
                     }
 
-                    let subtleDrift = Float(accelerationZ) * 0.045
                     self.moonContainer.eulerAngles = SCNVector3(
-                        Float(pitch) * 0.095 - 0.055,
-                        Float(roll) * 0.11 + subtleDrift,
-                        Float(roll) * 0.028
+                        Self.basePitch + Float(rotation.pitch),
+                        Float(rotation.yaw),
+                        0
                     )
                 }
             }
