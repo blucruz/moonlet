@@ -5,43 +5,67 @@ struct MoonPhaseDetailView: View {
     let isToday: Bool
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 0) {
-                VStack(spacing: 8) {
-                    Text(isToday ? "今天" : "月相详情")
-                        .font(.caption.weight(.semibold))
-                        .tracking(1.8)
-                        .foregroundStyle(.white.opacity(0.58))
+        ZStack {
+            MoonDetailAtmosphereView()
 
-                    Text(MoonPhaseFormatting.date(snapshot.date))
-                        .font(.system(.title3, design: .serif, weight: .medium))
-                        .foregroundStyle(.white.opacity(0.88))
+            ScrollView {
+                VStack(spacing: 0) {
+                    VStack(spacing: 8) {
+                        Text(isToday ? "今天" : "月相详情")
+                            .font(.caption.weight(.semibold))
+                            .tracking(1.8)
+                            .foregroundStyle(.white.opacity(0.58))
+
+                        Text(MoonPhaseFormatting.date(snapshot.date))
+                            .font(.system(.title3, design: .serif, weight: .medium))
+                            .foregroundStyle(.white.opacity(0.88))
+                    }
+
+                    ZStack {
+                        Circle()
+                            .fill(
+                                RadialGradient(
+                                    colors: [
+                                        Color(red: 0.50, green: 0.66, blue: 0.98)
+                                            .opacity(0.18),
+                                        .clear,
+                                    ],
+                                    center: .center,
+                                    startRadius: 62,
+                                    endRadius: 178
+                                )
+                            )
+                            .frame(width: 334, height: 334)
+                            .blur(radius: 13)
+
+                        MoonSceneKitMoonView(
+                            cycleProgress: snapshot.cycleProgress
+                        )
+                        .frame(width: 286, height: 286)
+                    }
+                    .frame(height: 306)
+                    .padding(.top, 20)
+
+                    Text(snapshot.phase.displayName)
+                        .font(.system(size: 38, weight: .medium, design: .serif))
+                        .foregroundStyle(.white)
+                        .padding(.top, 19)
+                        .accessibilityIdentifier("moon-phase-name")
+
+                    Text(snapshot.direction == .waxing ? "月光渐盈" : "月光渐亏")
+                        .font(.subheadline)
+                        .foregroundStyle(.white.opacity(0.56))
+                        .padding(.top, 8)
+
+                    MoonPhaseMetricsView(snapshot: snapshot)
+                        .padding(.top, 34)
                 }
-
-                MoonPhaseShape(cycleProgress: snapshot.cycleProgress)
-                    .frame(width: 236, height: 236)
-                    .padding(.top, 34)
-
-                Text(snapshot.phase.displayName)
-                    .font(.system(size: 38, weight: .medium, design: .serif))
-                    .foregroundStyle(.white)
-                    .padding(.top, 28)
-                    .accessibilityIdentifier("moon-phase-name")
-
-                Text(snapshot.direction == .waxing ? "月光渐盈" : "月光渐亏")
-                    .font(.subheadline)
-                    .foregroundStyle(.white.opacity(0.56))
-                    .padding(.top, 8)
-
-                MoonPhaseMetricsView(snapshot: snapshot)
-                    .padding(.top, 34)
+                .padding(.horizontal, 22)
+                .padding(.top, 30)
+                .padding(.bottom, 40)
             }
-            .padding(.horizontal, 22)
-            .padding(.top, 30)
-            .padding(.bottom, 40)
+            .accessibilityIdentifier("moon-phase-detail")
         }
-        .background(MoonPhaseBackground())
-        .accessibilityIdentifier("moon-phase-detail")
         .navigationTitle("")
         .navigationBarTitleDisplayMode(.inline)
     }

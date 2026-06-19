@@ -20,13 +20,21 @@
 		B1000000000000000000000D /* MoonPhaseShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000000000000000000000E /* MoonPhaseShape.swift */; };
 		B1000000000000000000000F /* MoonPhaseMetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000010 /* MoonPhaseMetricsView.swift */; };
 		B10000000000000000000011 /* MoonPhaseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000012 /* MoonPhaseDetailView.swift */; };
+		C10000000000000000000001 /* MoonSceneKitMoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000002 /* MoonSceneKitMoonView.swift */; };
+		C10000000000000000000003 /* MoonMotionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000004 /* MoonMotionController.swift */; };
+		D10000000000000000000003 /* MoonLightingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10000000000000000000004 /* MoonLightingModel.swift */; };
+		D10000000000000000000005 /* MoonDetailAtmosphereView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10000000000000000000006 /* MoonDetailAtmosphereView.swift */; };
 		B10000000000000000000013 /* MoonCalendarGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000014 /* MoonCalendarGridView.swift */; };
 		B10000000000000000000015 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000016 /* Localizable.xcstrings */; };
+		C10000000000000000000006 /* Moon_NASA_LRO_Flat_Small.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000005 /* Moon_NASA_LRO_Flat_Small.usdz */; };
+		C10000000000000000000007 /* lroc_color_2k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000008 /* lroc_color_2k.jpg */; };
+		C10000000000000000000009 /* ldem_3_8bit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C1000000000000000000000A /* ldem_3_8bit.jpg */; };
 		1A2B3C4D5E6F700000000052 /* FragmentHook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000053 /* FragmentHook.swift */; };
 		1A2B3C4D5E6F700000000054 /* FragmentManifestLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000055 /* FragmentManifestLoader.swift */; };
 		1A2B3C4D5E6F700000000056 /* FragmentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000057 /* FragmentRepository.swift */; };
 		1A2B3C4D5E6F700000000058 /* cycle-001.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000059 /* cycle-001.json */; };
 		1A2B3C4D5E6F70000000008A /* moonlet-ambient.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70000000008B /* moonlet-ambient.wav */; };
+		1A2B3C4D5E6F70000000008D /* moonlit-first-quarter.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70000000008E /* moonlit-first-quarter.png */; };
 		1A2B3C4D5E6F700000000060 /* ScenePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000061 /* ScenePlayerView.swift */; };
 		1A2B3C4D5E6F700000000062 /* ScenePlaybackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000063 /* ScenePlaybackViewModel.swift */; };
 		1A2B3C4D5E6F700000000064 /* SceneLayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000065 /* SceneLayerView.swift */; };
@@ -42,6 +50,7 @@
 		1A2B3C4D5E6F700000000050 /* FragmentRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000051 /* FragmentRepositoryTests.swift */; };
 		B10000000000000000000003 /* MoonPhaseDateRangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000004 /* MoonPhaseDateRangeTests.swift */; };
 		B10000000000000000000005 /* MoonPhaseStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000006 /* MoonPhaseStoreTests.swift */; };
+		D10000000000000000000001 /* MoonLightingModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10000000000000000000002 /* MoonLightingModelTests.swift */; };
 		1A2B3C4D5E6F700000000070 /* MoonletDailyFlowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000071 /* MoonletDailyFlowUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +85,10 @@
 		B1000000000000000000000E /* MoonPhaseShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhaseShape.swift; sourceTree = "<group>"; };
 		B10000000000000000000010 /* MoonPhaseMetricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhaseMetricsView.swift; sourceTree = "<group>"; };
 		B10000000000000000000012 /* MoonPhaseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhaseDetailView.swift; sourceTree = "<group>"; };
+		C10000000000000000000002 /* MoonSceneKitMoonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonSceneKitMoonView.swift; sourceTree = "<group>"; };
+		C10000000000000000000004 /* MoonMotionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonMotionController.swift; sourceTree = "<group>"; };
+		D10000000000000000000004 /* MoonLightingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonLightingModel.swift; sourceTree = "<group>"; };
+		D10000000000000000000006 /* MoonDetailAtmosphereView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonDetailAtmosphereView.swift; sourceTree = "<group>"; };
 		B10000000000000000000014 /* MoonCalendarGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonCalendarGridView.swift; sourceTree = "<group>"; };
 		B10000000000000000000016 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000053 /* FragmentHook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentHook.swift; sourceTree = "<group>"; };
@@ -83,6 +96,10 @@
 		1A2B3C4D5E6F700000000057 /* FragmentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentRepository.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000059 /* cycle-001.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "cycle-001.json"; sourceTree = "<group>"; };
 		1A2B3C4D5E6F70000000008B /* moonlet-ambient.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "moonlet-ambient.wav"; sourceTree = "<group>"; };
+		1A2B3C4D5E6F70000000008E /* moonlit-first-quarter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moonlit-first-quarter.png"; sourceTree = "<group>"; };
+		C10000000000000000000005 /* Moon_NASA_LRO_Flat_Small.usdz */ = {isa = PBXFileReference; lastKnownFileType = "model/vnd.usdz+zip"; path = Moonlet/Resources/3D/Moon_NASA_LRO_Flat_Small.usdz; sourceTree = SOURCE_ROOT; };
+		C10000000000000000000008 /* lroc_color_2k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Moonlet/Resources/3D/lroc_color_2k.jpg; sourceTree = SOURCE_ROOT; };
+		C1000000000000000000000A /* ldem_3_8bit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Moonlet/Resources/3D/ldem_3_8bit.jpg; sourceTree = SOURCE_ROOT; };
 		1A2B3C4D5E6F700000000061 /* ScenePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenePlayerView.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000063 /* ScenePlaybackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenePlaybackViewModel.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000065 /* SceneLayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneLayerView.swift; sourceTree = "<group>"; };
@@ -99,6 +116,7 @@
 		1A2B3C4D5E6F700000000051 /* FragmentRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentRepositoryTests.swift; sourceTree = "<group>"; };
 		B10000000000000000000004 /* MoonPhaseDateRangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhaseDateRangeTests.swift; sourceTree = "<group>"; };
 		B10000000000000000000006 /* MoonPhaseStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhaseStoreTests.swift; sourceTree = "<group>"; };
+		D10000000000000000000002 /* MoonLightingModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonLightingModelTests.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700000000017 /* MoonletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoonletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2B3C4D5E6F700000000018 /* Moonlet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moonlet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2B3C4D5E6F700000000073 /* MoonletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoonletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,7 +173,7 @@
 				1A2B3C4D5E6F700000000011 /* MoonletApp.swift */,
 				1A2B3C4D5E6F700000000019 /* App */,
 				1A2B3C4D5E6F700000000080 /* Calendar */,
-				B10000000000000000000017 /* MoonPhase */,
+				C10000000000000000000000 /* MoonPhase */,
 				1A2B3C4D5E6F70000000001A /* Domain */,
 				1A2B3C4D5E6F70000000005A /* Content */,
 				1A2B3C4D5E6F70000000006C /* Scene */,
@@ -172,6 +190,7 @@
 				1A2B3C4D5E6F700000000051 /* FragmentRepositoryTests.swift */,
 				B10000000000000000000004 /* MoonPhaseDateRangeTests.swift */,
 				B10000000000000000000006 /* MoonPhaseStoreTests.swift */,
+				D10000000000000000000002 /* MoonLightingModelTests.swift */,
 			);
 			path = MoonletTests;
 			sourceTree = "<group>";
@@ -204,13 +223,17 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
-		B10000000000000000000017 /* MoonPhase */ = {
+		C10000000000000000000000 /* MoonPhase */ = {
 			isa = PBXGroup;
 			children = (
 				B1000000000000000000000C /* MoonPhaseFormatting.swift */,
 				B1000000000000000000000E /* MoonPhaseShape.swift */,
 				B10000000000000000000010 /* MoonPhaseMetricsView.swift */,
 				B10000000000000000000012 /* MoonPhaseDetailView.swift */,
+				C10000000000000000000002 /* MoonSceneKitMoonView.swift */,
+				C10000000000000000000004 /* MoonMotionController.swift */,
+				D10000000000000000000004 /* MoonLightingModel.swift */,
+				D10000000000000000000006 /* MoonDetailAtmosphereView.swift */,
 			);
 			path = MoonPhase;
 			sourceTree = "<group>";
@@ -282,8 +305,28 @@
 				1A2B3C4D5E6F70000000008C /* Audio */,
 				1A2B3C4D5E6F70000000005C /* Fragments */,
 				B10000000000000000000016 /* Localizable.xcstrings */,
+				1A2B3C4D5E6F70000000008F /* Images */,
+				1A2B3C4D5E6F700000000090 /* Moon3D */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		1A2B3C4D5E6F70000000008F /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1A2B3C4D5E6F70000000008E /* moonlit-first-quarter.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		1A2B3C4D5E6F700000000090 /* Moon3D */ = {
+			isa = PBXGroup;
+			children = (
+				C10000000000000000000005 /* Moon_NASA_LRO_Flat_Small.usdz */,
+				C10000000000000000000008 /* lroc_color_2k.jpg */,
+				C1000000000000000000000A /* ldem_3_8bit.jpg */,
+			);
+			path = 3D;
 			sourceTree = "<group>";
 		};
 		1A2B3C4D5E6F70000000008C /* Audio */ = {
@@ -406,6 +449,10 @@
 				1A2B3C4D5E6F700000000058 /* cycle-001.json in Resources */,
 				1A2B3C4D5E6F70000000008A /* moonlet-ambient.wav in Resources */,
 				B10000000000000000000015 /* Localizable.xcstrings in Resources */,
+				1A2B3C4D5E6F70000000008D /* moonlit-first-quarter.png in Resources */,
+				C10000000000000000000006 /* Moon_NASA_LRO_Flat_Small.usdz in Resources */,
+				C10000000000000000000007 /* lroc_color_2k.jpg in Resources */,
+				C10000000000000000000009 /* ldem_3_8bit.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +489,10 @@
 				B1000000000000000000000D /* MoonPhaseShape.swift in Sources */,
 				B1000000000000000000000F /* MoonPhaseMetricsView.swift in Sources */,
 				B10000000000000000000011 /* MoonPhaseDetailView.swift in Sources */,
+				C10000000000000000000001 /* MoonSceneKitMoonView.swift in Sources */,
+				C10000000000000000000003 /* MoonMotionController.swift in Sources */,
+				D10000000000000000000003 /* MoonLightingModel.swift in Sources */,
+				D10000000000000000000005 /* MoonDetailAtmosphereView.swift in Sources */,
 				B10000000000000000000013 /* MoonCalendarGridView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,6 +506,7 @@
 				1A2B3C4D5E6F700000000050 /* FragmentRepositoryTests.swift in Sources */,
 				B10000000000000000000003 /* MoonPhaseDateRangeTests.swift in Sources */,
 				B10000000000000000000005 /* MoonPhaseStoreTests.swift in Sources */,
+				D10000000000000000000001 /* MoonLightingModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
